@@ -2,8 +2,9 @@
 
 ## ToDo
 
-|-----------------|
-| Grundaufbau | ❎|
+| Funktion | Implementiert          |
+| ------- | ------------------ |
+| Grundaufbau | :x: |
 | Login | :x: |
 | NachrichtenTypen | :x: |
 | Chat Varianeten | :x: |
