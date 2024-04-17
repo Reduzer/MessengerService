@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+namespace Messenges
+{
+    /// <summary>
+    /// Klasse für das Verwalten von Messenges
+    /// </summary>
+    public class Messenges
+    {
+
+    }
+}
