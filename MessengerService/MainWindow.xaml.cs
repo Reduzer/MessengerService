@@ -19,6 +19,8 @@ namespace MessengerService
         public MainWindow()
         {
             InitializeComponent();
+
+            MessageBox.Show();
         }
     }
 }
