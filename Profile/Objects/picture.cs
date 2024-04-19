@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Messenges.Types
+namespace Profile.Objects
 {
-    internal class audioType
+    internal class picture
     {
-        private double dlength;
-
+        public picture() { }
 
 
     }
