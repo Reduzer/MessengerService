@@ -15,7 +15,19 @@ namespace Profile
         
         }
 
+        public void profileLoader()
+        {
 
+        }
+
+
+
+        public object getInfo()
+        {
+
+
+            return null;
+        }
 
 
 

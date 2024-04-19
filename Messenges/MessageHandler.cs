@@ -8,5 +8,23 @@ namespace Messenges
     public class Messenges
     {
 
+
+        public Messenges() 
+        { 
+        
+        }
+
+        public void newMessage()
+        {
+
+        }
+
+        public void deleteMessage()
+        {
+
+        }
+
+
+
     }
 }
