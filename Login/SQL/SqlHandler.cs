@@ -47,6 +47,11 @@ namespace Login.SQL
             }
         }
 
+        public int checkMac(string macAdress)
+        {
+
+        }
+
         private unsafe bool check()
         {
             if(checkIfSafe.isSafe(sUserName, sUserPassword))
