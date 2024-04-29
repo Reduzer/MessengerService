@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using MessengerService.Objects;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,11 +17,34 @@ namespace MessengerService
     /// </summary>
     public partial class MainWindow : Window
     {
+        private unsafe string* pName;
+        private unsafe string* pPassword;
+
+        private unsafe user user;
+
+
         public MainWindow()
         {
             InitializeComponent();
 
-            MessageBox.Show();
+            MessageBox.Show("TEST");
+        }
+
+        private unsafe bool logIn(string name, string password)
+        {
+            *pName = name;
+            *pPassword = password;
+
+            user = new user(pName, pPassword) ;
+
+            if (user.login())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
