@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows;
 using Login;
 using MessengerService.Exceptions;
 
@@ -56,8 +56,9 @@ namespace MessengerService.Objects
             }
             catch(InfoLoadException)
             {
-                getInfo();
-                
+                MessageBox.Show("There has been an error while getting your information");
+
+                return false;
             }
             catch (Exception)
             {
