@@ -11,25 +11,37 @@ namespace Login.Security
 {
     internal class encryptSym
     {
+
         public encryptSym()
         {
-
+         
         }
 
         public string getEncryptetMessage(string sInput)
         {
             string sReturnString = "";
 
-            sReturnString = encryptSym(sInput);
+            sReturnString = encryptSyme(sInput);
 
             return sReturnString;
         }
 
-        private string encryptSym(string sInput)
+
+        
+        private string encryptSyme(string sInput)
         {
+            string sReturnString = "";
 
+            using (Aes myAes = Aes.Create())
+            {
+                sReturnString = sInput;
+
+
+            }
+            
+            return sReturnString;
         }
-
+        
 
     }
 }

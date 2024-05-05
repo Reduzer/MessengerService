@@ -53,7 +53,7 @@ namespace Messenges.Factory
             {
                 if (checkType(type))
                 {
-                    m_returnObject = createMessage(type);
+                    m_returnObject = createMessageObject(type);
                     return m_returnObject;
                 }
                 else
@@ -80,10 +80,12 @@ namespace Messenges.Factory
             }
         }
 
-        private object createMessage(string type)
+        private object createMessageObject(string type)
         {
             object m_returnObject;
             m_returnObject = new object();
+
+            return m_returnObject;
 
         }
 

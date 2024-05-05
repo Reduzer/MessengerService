@@ -39,8 +39,28 @@ namespace Login.SQL
             }
         }
 
-        private bool check()
+        private unsafe bool check()
         {
+            try
+            {
+                if (checkNm() && checkPW())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        private unsafe bool checkNm()
+        {
+            string  sUserInput = *psUserName;
 
             if (sUserInput.Length > 100)
             {
@@ -57,6 +77,29 @@ namespace Login.SQL
                     return true;
                 }
             }
+        }
+
+        private unsafe bool checkPW()
+        {
+            string sUserInput = *psUserPassword;
+
+            if (sUserInput.Length > 100)
+            {
+                throw new StringLengthException();
+            }
+            else
+            {
+                if (sUserInput.Contains("DROP") || sUserInput.Contains("DELETE") || sUserInput.Contains("INSERT") || sUserInput.Contains("UPDATE"))
+                {
+                    throw new IllegalSqlCommandException();
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

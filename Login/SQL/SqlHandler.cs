@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Login.Objects;
+
 namespace Login.SQL
 {
     internal class SqlHandler
@@ -15,8 +17,6 @@ namespace Login.SQL
 
         private unsafe string* sUserName;
         private unsafe string* sUserPassword;
-
-
 
         public SqlHandler() 
         {
@@ -47,9 +47,16 @@ namespace Login.SQL
             }
         }
 
-        public int checkMac(string macAdress)
+        public macObject checkMac(string macAdress)
         {
+            if (macIsKnown())
+            {
 
+            }
+            else 
+            {
+                return null;
+            }
         }
 
         private unsafe bool check()
@@ -62,6 +69,11 @@ namespace Login.SQL
             {
                 return false;
             }
+        }
+
+        private bool macIsKnown()
+        {
+            return false;
         }
 
         private bool sendToDataBase()

@@ -51,7 +51,7 @@ namespace Login.src
 
         private bool sqlRequest()
         {
-            if (handler.checkMac(sMacAdress))
+            if (handler.checkMac(sMacAdress) != null)
             {
 
 
