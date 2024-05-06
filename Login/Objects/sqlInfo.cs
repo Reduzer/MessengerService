@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login.SQL
+namespace Login.Objects
 {
-    internal class createSqlStatement
+    internal class sqlInfo
     {
-        public createSqlStatement()
-        {
-
-        }
-
     }
 }

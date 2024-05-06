@@ -12,7 +12,6 @@ namespace Login.SQL
     {
 
         private checkIfSafe checkIfSafe;
-        private createSqlStatement createSqlStatement;
         private getInfo getInfo;
 
         private unsafe string* sUserName;
@@ -21,7 +20,6 @@ namespace Login.SQL
         public SqlHandler() 
         {
             checkIfSafe = new checkIfSafe();
-            createSqlStatement = new createSqlStatement();
             getInfo = new getInfo();
         }
 

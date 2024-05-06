@@ -35,7 +35,5 @@ namespace Login
         {
             m_sqlHandler.Sql(psName, psPassword);
         }
-
-
     }
 }
