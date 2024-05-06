@@ -15,7 +15,10 @@ namespace Profile
         
         }
 
+        public static void Main()
+        {
 
+        }
 
 
         public void profileLoader()

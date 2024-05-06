@@ -14,6 +14,11 @@ namespace Messenges
         
         }
 
+        public static void Main()
+        {
+
+        }
+
         public void newMessage()
         {
 

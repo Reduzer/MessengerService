@@ -17,6 +17,11 @@ namespace Login
         {
             m_sqlHandler = new SqlHandler();
         }
+        
+        public static void Main()
+        {
+
+        }
 
         public unsafe void LogInClient(string* name, string* password)
         {

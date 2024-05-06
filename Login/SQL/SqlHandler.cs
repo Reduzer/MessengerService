@@ -51,7 +51,7 @@ namespace Login.SQL
         {
             if (macIsKnown())
             {
-
+                return getMacObject();
             }
             else 
             {
@@ -74,6 +74,11 @@ namespace Login.SQL
         private bool macIsKnown()
         {
             return false;
+        }
+
+        private macObject getMacObject()
+        {
+            return null;
         }
 
         private bool sendToDataBase()
