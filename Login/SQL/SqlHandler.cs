@@ -12,7 +12,6 @@ namespace Login.SQL
     {
 
         private checkIfSafe checkIfSafe;
-        private createSqlStatement createSqlStatement;
         private getInfo getInfo;
 
         private unsafe string* sUserName;
@@ -21,7 +20,6 @@ namespace Login.SQL
         public SqlHandler() 
         {
             checkIfSafe = new checkIfSafe();
-            createSqlStatement = new createSqlStatement();
             getInfo = new getInfo();
         }
 
@@ -51,7 +49,7 @@ namespace Login.SQL
         {
             if (macIsKnown())
             {
-
+                return getMacObject();
             }
             else 
             {
@@ -74,6 +72,11 @@ namespace Login.SQL
         private bool macIsKnown()
         {
             return false;
+        }
+
+        private macObject getMacObject()
+        {
+            return null;
         }
 
         private bool sendToDataBase()

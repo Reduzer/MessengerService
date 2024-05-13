@@ -76,7 +76,7 @@ namespace MessengerService.Objects
 
         private bool getInfo()
         {
-
+            return false;
         }
 
     }
