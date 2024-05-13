@@ -8,14 +8,16 @@ namespace Messenges.Factory
 {
     internal class deleteMessage
     {
+        private object m_messageObject;
+
         public deleteMessage() 
         {
         
         }
 
-        public void delete(int nMessageIndex)
+        public void delete(object messageOBject)
         {
-
+            m_messageObject = messageOBject;
         }
     }
 }
