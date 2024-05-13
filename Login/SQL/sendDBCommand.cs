@@ -21,9 +21,14 @@ namespace Login.SQL
 
         }
 
-        public sqlInfo sendDBCommand()
+        public sqlInfo sendCommand()
         {
             return null;
+        }
+
+        private void sendToDB()
+        {
+
         }
     }
 }

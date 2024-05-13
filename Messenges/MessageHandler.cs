@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Messenges.Factory;
+using System;
 
 namespace Messenges
 {
@@ -7,11 +8,11 @@ namespace Messenges
     /// </summary>
     public class Messenges
     {
-
+        private createMessage m_createMessage;
 
         public Messenges() 
         { 
-        
+            m_createMessage = new createMessage();
         }
 
         public static void Main()
@@ -19,17 +20,14 @@ namespace Messenges
 
         }
 
-        public void newMessage()
+        public void newMessage(string type)
         {
-
+            object messageObject = m_createMessage.createMSG(type);
         }
 
         public void deleteMessage()
         {
-
+            
         }
-
-
-
     }
 }
