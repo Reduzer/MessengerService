@@ -1,1 +1,19 @@
-﻿
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Ablauf>
+    <Start>Prüfen, ob Gerät bekannt ist</Start>
+    <Step>Anmelden, wenn bekannt</Step>
+
+    <sonst></sonst>
+
+    <start>Anmeldedaten werden eingegeben</start>
+    <Step>Daten werden übertragen</Step>
+    <Step>Daten auf SQL Befehle prüfen</Step>
+    <Step>Salt aus Datenbank holen</Step>
+    <Step>Daten Hashen mit dem Salt</Step>
+    <Step>prüfen, ob diese richtig sind</Step>
+
+    <Anmelden></Anmelden>
+    
+    <Step>Hauptansicht laden</Step>
+</Ablauf>
