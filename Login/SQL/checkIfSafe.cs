@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows;
 
 using Login.Exceptions;
@@ -14,7 +13,6 @@ namespace Login.SQL
     {
         private unsafe string* psUserName;
         private unsafe string* psUserPassword;
-
 
 
         public unsafe bool isSafe(string* name, string* password)
@@ -68,7 +66,7 @@ namespace Login.SQL
             }
             else
             {
-                if (sUserInput.Contains("DROP") || sUserInput.Contains("DELETE") || sUserInput.Contains("INSERT") || sUserInput.Contains("UPDATE"))
+                if (sUserInput.Contains("DROP") || sUserInput.Contains("DELETE") || sUserInput.Contains("INSERT") || sUserInput.Contains("UPDATE") || sUserInput.Contains('"'))
                 {
                     throw new IllegalSqlCommandException();
                 }
@@ -89,7 +87,7 @@ namespace Login.SQL
             }
             else
             {
-                if (sUserInput.Contains("DROP") || sUserInput.Contains("DELETE") || sUserInput.Contains("INSERT") || sUserInput.Contains("UPDATE"))
+                if (sUserInput.Contains("DROP") || sUserInput.Contains("DELETE") || sUserInput.Contains("INSERT") || sUserInput.Contains("UPDATE") || sUserInput.Contains('"'))
                 {
                     throw new IllegalSqlCommandException();
                 }
