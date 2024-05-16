@@ -1,4 +1,5 @@
-﻿using Login.SQL;
+﻿using Login.Objects;
+using Login.SQL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
@@ -12,9 +13,9 @@ namespace Login.src
     internal class trustedDevice
     {
         private SqlHandler handler;
+        private macObject m_macObject;
 
         private string sMacAdress;
-        private bool bIsKnown;
 
         private string sUserName;
         private string sPassword;
@@ -67,14 +68,6 @@ namespace Login.src
         {
             
 
-
-            return true;
-        }
-
-        private bool accountIsKnown()
-        {
-            vs_Infos.Add(sUserName);
-            vs_Infos.Add(sPassword);
 
             return true;
         }
