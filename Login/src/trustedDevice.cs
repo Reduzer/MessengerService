@@ -1,4 +1,5 @@
-﻿using Login.Objects;
+﻿using Login.Exceptions;
+using Login.Objects;
 using Login.SQL;
 using System;
 using System.Collections.Generic;
@@ -68,13 +69,15 @@ namespace Login.src
                     return false;
                 }
             }
-            catch ()
+            catch (macAdressException e)
             {
-
+                Debug.WriteLine(e.ToString);
+                return false;
             }
             catch(Exception e)
             {
                 Debug.WriteLine(e.ToString);
+                return false;
             }
             
         }
