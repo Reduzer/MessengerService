@@ -12,18 +12,13 @@ namespace Login
         private unsafe string* psName;
         private unsafe string* psPassword;
 
-        private SqlHandler m_sqlHandler;
-        private trustedDevice m_trusted;
+        private static SqlHandler m_sqlHandler;
+        private static trustedDevice m_trusted;
 
         public Login()
         {
             m_sqlHandler = new SqlHandler();
             m_trusted = new trustedDevice();
-        }
-        
-        public static void Main()
-        {
-
         }
 
         public unsafe void LogInClient(string* name, string* password)
@@ -36,9 +31,28 @@ namespace Login
 
         private unsafe void loginUser()
         {
-            m_trusted.isDeviceKnown();
-
             m_sqlHandler.Sql(psName, psPassword);
+        }
+
+        private static bool checkForTrused()
+        {
+            if (m_trusted.isDeviceKnown() != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public static void Main()
+        {
+            if (checkForTrused())
+            {
+
+            }
         }
     }
 }

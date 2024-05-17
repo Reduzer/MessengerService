@@ -11,18 +11,11 @@ namespace Login.SQL
 {
     internal class checkIfSafe
     {
-        private unsafe string* psUserName;
-        private unsafe string* psUserPassword;
-
-
         public unsafe bool isSafe(string* name, string* password)
         {
-            this.psUserName = name;
-            this.psUserPassword = password;
-
             try
             { 
-                if (check())
+                if (checkInput(name, password))
                 {
                     return true;
                 }
@@ -37,30 +30,12 @@ namespace Login.SQL
             }
         }
 
-        private unsafe bool check()
+        private unsafe bool checkInput(string* name, string* password)
         {
-            try
-            {
-                if (checkNm() && checkPW())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch(Exception)
-            {
-                return false;
-            }
-        }
+            string sUserInput = *name;
+            string sUserPassword = *password;
 
-        private unsafe bool checkNm()
-        {
-            string  sUserInput = *psUserName;
-
-            if (sUserInput.Length > 100)
+            if (sUserInput.Length > 180)
             {
                 throw new StringLengthException();
             }
@@ -75,29 +50,6 @@ namespace Login.SQL
                     return true;
                 }
             }
-        }
-
-        private unsafe bool checkPW()
-        {
-            string sUserInput = *psUserPassword;
-
-            if (sUserInput.Length > 100)
-            {
-                throw new StringLengthException();
-            }
-            else
-            {
-                if (sUserInput.Contains("DROP") || sUserInput.Contains("DELETE") || sUserInput.Contains("INSERT") || sUserInput.Contains("UPDATE") || sUserInput.Contains('"'))
-                {
-                    throw new IllegalSqlCommandException();
-                }
-                else
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }
