@@ -1,2 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using System;
+
+namespace networking
+{
+ public class networking
+ {
+  public static void Main(){
+
+  }
+
+  private static bool testConnection()  
+  { 
+
+  }
+ }
+}
+
