@@ -20,11 +20,11 @@ namespace Login
             m_sqlHandler = new SqlHandler();
             m_trusted = new trustedDevice();
         }
+
         public void LogInClient()
         {
 
         }
-
 
         public unsafe void LogInClient(string* name, string* password)
         {

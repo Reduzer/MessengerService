@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MessengerService"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Login Messenger by Reduzer" 
+        Height="450" 
+        Width="300">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Name" Margin="766,94,460,567"/>
+        <Button Margin="843,458,221,201">
+            <Label Content="Test"/>
+        </Button>
+
+
+        <Label Content="Password" Margin="131,289,709,217"/>
     </Grid>
 </Window>
