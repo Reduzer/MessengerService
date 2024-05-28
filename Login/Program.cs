@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Login.Exceptions;
+using Login.Objects;
 using Login.Security;
 using Login.SQL;
 using Login.src;
@@ -15,6 +16,8 @@ namespace Login
         private  SqlHandler m_sqlHandler;
         private  trustedDevice m_trusted;
 
+        private UserObject m_User;
+
         public Login()
         {
             m_sqlHandler = new SqlHandler();
@@ -26,21 +29,42 @@ namespace Login
 
         }
 
-        public unsafe void LogInClient(string* name, string* password)
+        public unsafe UserObject LogInClient(string* name, string* password)
         {
+            UserObject returnUser;
+
             if (checkForTrused())
             {
                 loginUser();
+                returnUser = m_User;
+                return returnUser;
             }
+
             psName = name;
             psPassword = password;
 
-            loginUser();
+            if (loginUser())
+            {
+                returnUser = m_User;
+                return returnUser;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        private unsafe void loginUser()
+        private unsafe bool loginUser()
         {
-            m_sqlHandler.Sql(psName, psPassword);
+            if(m_sqlHandler.Sql(psName, psPassword))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+                
         }
 
         private bool checkForTrused()
@@ -53,6 +77,11 @@ namespace Login
             {
                 return false;
             }
+        }
+
+        private unsafe void fillUserInfo(string* name, int* id)
+        {
+
         }
 
         public static void Main()
