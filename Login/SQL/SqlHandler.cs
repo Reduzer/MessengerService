@@ -10,17 +10,16 @@ namespace Login.SQL
 {
     internal class SqlHandler
     {
-
-        private checkIfSafe checkIfSafe;
-        private getInfo getInfo;
+        private createSqlStatement m_sqlStatement;
+        private checkIfSafe m_checkIfSafe;
 
         private unsafe string* sUserName;
         private unsafe string* sUserPassword;
 
         public SqlHandler() 
         {
-            checkIfSafe = new checkIfSafe();
-            getInfo = new getInfo();
+            m_sqlStatement = new createSqlStatement();
+            m_checkIfSafe = new checkIfSafe();
         }
 
         public unsafe bool Sql(string* name, string* password)
@@ -59,7 +58,7 @@ namespace Login.SQL
 
         private unsafe bool check()
         {
-            if(checkIfSafe.isSafe(sUserName, sUserPassword))
+            if(m_checkIfSafe.isSafe(sUserName, sUserPassword))
             {
                 return true;
             }
@@ -81,7 +80,7 @@ namespace Login.SQL
 
         private bool sendToDataBase()
         {
-
+            
 
             return false;
         }

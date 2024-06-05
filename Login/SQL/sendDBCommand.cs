@@ -16,9 +16,22 @@ namespace Login.SQL
     {
         private SqlConnectionStringBuilder builder;
         private string sqlCommand;
+        
         public sendDBCommand()
         {
+            builder = new SqlConnectionStringBuilder();
+        }
 
+        private void connectToSQL()
+        {
+            //SQL Server Name
+            builder.DataSource = "FDEU-131\\SQLEXPRESS";
+            //SQL User Name
+            builder.UserID = "sa";
+            //SQL User Password
+            builder.Password = "applesauce/2";
+            //SQL Datebase
+            builder.InitialCatalog = "Test";
         }
 
         public sqlInfo sendCommand()

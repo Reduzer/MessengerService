@@ -8,10 +8,23 @@ namespace Login.SQL
 {
     internal class createSqlStatement
     {
+        private string type;
+        private string target;
+
+
         public createSqlStatement()
         {
 
         }
 
+        public string createStatement(string type, string target, string input)
+        {
+            string returnString;
+
+            returnString = "SELECT " + type + " FROM users WHERE " + target + " = '" + input + "'";
+
+
+            return null;
+        }
     }
 }

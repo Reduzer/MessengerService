@@ -20,18 +20,18 @@ namespace Login
             m_sqlHandler = new SqlHandler();
             m_trusted = new trustedDevice();
         }
+
         public void LogInClient()
-        {
-
-        }
-
-
-        public unsafe void LogInClient(string* name, string* password)
         {
             if (checkForTrused())
             {
                 loginUser();
             }
+        }
+
+
+        public unsafe void LogInClient(string* name, string* password)
+        {
             psName = name;
             psPassword = password;
 
@@ -47,7 +47,8 @@ namespace Login
         {
             if (m_trusted.isDeviceKnown() != null)
             {
-                return true;
+                //WIP
+                return false;
             }
             else
             {
