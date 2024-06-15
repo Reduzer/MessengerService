@@ -20,8 +20,10 @@ namespace networking
             }
         }
 
-        private static bool testConnection()  
+        private static bool testConnection()
         {
+            setupServerAndClient();
+            
             if (tests.testConnection())
             {
                 return true;
@@ -30,6 +32,11 @@ namespace networking
             {
                 return false;
             }
+        }
+
+        private static void setupServerAndClient()
+        {
+            
         }
 
         public void sendMessage()
