@@ -2,47 +2,21 @@ using Networking.ConnectionTesting;
 using System;
 using System.Diagnostics;
 
+using networking.Client;
+using networking.Server;
+
 namespace networking
 {
     public class networking
     {
-        private static TestHandler tests = new TestHandler();
-
+        private static ClientHandler m_client = new ClientHandler();
+        private static ServerHandler m_server = new ServerHandler();
+        
         public static void Main()
         {
-            if (testConnection())
-            {
-                Debug.WriteLine("Connection established");
-            }
-            else
-            {
-                Debug.WriteLine("Connection failed");
-            }
-        }
-
-        private static bool testConnection()
-        {
-            setupServerAndClient();
-            
-            if (tests.testConnection())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private static void setupServerAndClient()
-        {
-            
-        }
-
-        public void sendMessage()
-        {
 
         }
+        
     }
 }
 
