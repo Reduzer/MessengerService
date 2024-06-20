@@ -29,14 +29,9 @@ namespace Login.SQL
 
             if (check())
             {
-                if (sendToDataBase())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                getSQLStatement();
+
+
             }
             else
             {
@@ -78,11 +73,10 @@ namespace Login.SQL
             return null;
         }
 
-        private bool sendToDataBase()
+        private unsafe string getSQLStatement()
         {
-            
-
-            return false;
+            string returnstring = m_sqlStatement.createStatement(sUserName);
+            return returnstring;
         }
 
     }

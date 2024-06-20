@@ -26,42 +26,21 @@ namespace Login
 
         public void LogInClient()
         {
-<<<<<<< HEAD
-=======
 
         }
-
-        public unsafe UserObject LogInClient(string* name, string* password)
-        {
-            UserObject returnUser;
-
->>>>>>> 6f86a6dc8e5e3d284e469a4d280206ee882d32dd
-            if (checkForTrused())
-            {
-                loginUser();
-                returnUser = m_User;
-                return returnUser;
-            }
-<<<<<<< HEAD
-        }
-
 
         public unsafe void LogInClient(string* name, string* password)
         {
-=======
-
->>>>>>> 6f86a6dc8e5e3d284e469a4d280206ee882d32dd
             psName = name;
             psPassword = password;
 
-            if (loginUser())
+            if (checkForTrused())
             {
-                returnUser = m_User;
-                return returnUser;
+                loginUser();
             }
             else
             {
-                return null;
+                return;
             }
         }
 
@@ -74,8 +53,7 @@ namespace Login
             else
             {
                 return false;
-            }
-                
+            }    
         }
 
         private bool checkForTrused()
@@ -89,11 +67,6 @@ namespace Login
             {
                 return false;
             }
-        }
-
-        private unsafe void fillUserInfo(string* name, int* id)
-        {
-
         }
 
         public static void Main()
