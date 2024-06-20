@@ -25,11 +25,9 @@
             Grid.Column="0"
             BorderBrush="Black"
             BorderThickness="2">
-            <Frame>
-                <Page
-                    Name="ProfilePage">
-                    
-                </Page>
+            <Frame
+                Name="ProfilePage">
+
             </Frame>
                 
             
@@ -41,11 +39,8 @@
             Grid.Column="0"
             BorderBrush="Red"
             BorderThickness="2">
-            <Frame>
-                <Page
+            <Frame
                     Name="ChatListPage">
-                
-                </Page>
             </Frame>
             
         </Border>
@@ -56,11 +51,9 @@
             Grid.Column="1"
             BorderBrush="Green"
             BorderThickness="2">
-            <Frame>
-                <Page
-                    Name="ChatHeaderPage">
-                
-                </Page>
+            <Frame
+                Name="ChatHeaderPage">
+
             </Frame>
             
         </Border>
@@ -72,11 +65,9 @@
             BorderBrush="Blue"
             BorderThickness="2">
             
-            <Frame>
-                <Page
-                    Name="MainPage">
-                
-                </Page>
+            <Frame
+                Name="MainPage">
+
             </Frame>
         </Border>
     </Grid>

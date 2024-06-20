@@ -21,7 +21,7 @@ namespace MessengerService
         private unsafe string* pPassword;
 
         private unsafe user user;
-
+        
 
         public MainWindow()
         {
