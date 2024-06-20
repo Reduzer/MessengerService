@@ -5,8 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Viewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" 
+        Height="450" 
+        Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height ="9*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Border
+            Name = "BorderProfile"
+            Grid.Row="0"
+            Grid.Column="0"
+            BorderBrush="Black"
+            BorderThickness="2">
+            <Frame>
+                <Page
+                    Name="ProfilePage">
+                    
+                </Page>
+            </Frame>
+                
+            
+        </Border>
+        
+        <Border
+            Name="BorderChats"
+            Grid.Row="1"
+            Grid.Column="0"
+            BorderBrush="Red"
+            BorderThickness="2">
+            <Frame>
+                <Page
+                    Name="ChatListPage">
+                
+                </Page>
+            </Frame>
+            
+        </Border>
+        
+        <Border
+            Name="BorderChatHeader"
+            Grid.Row="0"
+            Grid.Column="1"
+            BorderBrush="Green"
+            BorderThickness="2">
+            <Frame>
+                <Page
+                    Name="ChatHeaderPage">
+                
+                </Page>
+            </Frame>
+            
+        </Border>
+        
+        <Border
+            Name="BorderMainPage"
+            Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="Blue"
+            BorderThickness="2">
+            
+            <Frame>
+                <Page
+                    Name="MainPage">
+                
+                </Page>
+            </Frame>
+        </Border>
     </Grid>
 </Window>
