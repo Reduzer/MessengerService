@@ -29,18 +29,25 @@ namespace Login
 
         }
 
-        public unsafe void LogInClient(string* name, string* password)
+        public unsafe bool LogInClient(string* name, string* password)
         {
             psName = name;
             psPassword = password;
 
             if (checkForTrused())
             {
-                loginUser();
+                if (loginUser())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
-                return;
+                return false;
             }
         }
 

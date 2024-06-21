@@ -19,10 +19,6 @@ namespace MessengerService.Objects
 
         private Login.Login m_login;
 
-
-
-
-
         /// <summary>
         /// Default Constructor for a user
         /// </summary>
@@ -51,6 +47,7 @@ namespace MessengerService.Objects
                 }
                 else
                 {
+                    
                     return false;
                 }
             }
@@ -62,6 +59,7 @@ namespace MessengerService.Objects
             }
             catch (Exception)
             {
+                MessageBox.Show("Exception while do User things");
                 return false;
             }
             

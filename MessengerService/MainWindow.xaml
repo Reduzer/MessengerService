@@ -5,29 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MessengerService"
         mc:Ignorable="d"
-        Title="Login Messenger by Reduzer" 
+        Title="Login Messenger by Reduzer"
+        ResizeMode="NoResize"
         Height="450" 
-        Width="300">
+        Width="310">
     <Grid>
 
-        <Label Content="Name" 
-               Margin="100,38,113,351"/>
+        <Label  
+            Name="LabelName"
+            Margin="110,30,110,360"
+            Content="Name"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
        
-        <Label Content="Password"
-               Margin="98,202,84,183"/>
+        <Label 
+            Content="Password"
+            Margin="92,170,90,215"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
 
-        <Button Margin="11,353,183,10">
+        <Button 
+            Margin="11,353,178,10">
+            
             <Label 
                 Content="Forgot Password"/>
+            
         </Button>
         
 
         <Button
             Name="LoginButton"
-            Margin="228,357,13,12"
+            Margin="228,365,15,15"
             Click="LoginButton_Click">
+            
             <Label Content="Login"/>
+            
         </Button>
+
+
+        <TextBox 
+            Name="TextBoxName"
+            Margin="36,83,36,279"
+            Background="#404040"
+            Foreground="White"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center">
+            
+        </TextBox>
+
+        <TextBox
+            Name="TextBoxPassword" 
+            Margin="36,228,36,133"
+            Background="#404040"
+            Foreground="White"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center">
+            
+        </TextBox>
         
     </Grid>
 </Window>

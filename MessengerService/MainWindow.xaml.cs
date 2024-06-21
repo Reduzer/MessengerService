@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Viewer;
+using Login;
 
 namespace MessengerService
 {
@@ -22,37 +23,53 @@ namespace MessengerService
         private unsafe string* pName;
         private unsafe string* pPassword;
 
-        private unsafe user user;
-
         Viewer.MainWindow newForm;
+
+        private Login.Login login;
 
         public MainWindow()
         {
             InitializeComponent();
+            login = new Login.Login();
         }
 
-        private unsafe bool logIn(string name, string password)
+
+
+        private unsafe bool logIn()
         {
-            *pName = name;
-            *pPassword = password;
-
-            user = new user(pName, pPassword) ;
-
-            if (user.login())
+            MessageBox.Show("Login Called");
+            if(login.LogInClient(pName, pPassword))
             {
+                MessageBox.Show("");
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
+
+        private unsafe void getInput()
+        {
+            string name = TextBoxName.Text;
+            string password = TextBoxPassword.Text;
+
+            pName = &name;
+            pPassword = &password;
+        }
+
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            newForm = new Viewer.MainWindow();
-            newForm.Show();
-            this.Hide();
+            getInput();
+
+            if (logIn())
+            {
+                newForm = new Viewer.MainWindow();
+                newForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Your inputs are invalid, please check");
+            }
         }
     }
 }
