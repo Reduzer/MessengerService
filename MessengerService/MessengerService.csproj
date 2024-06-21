@@ -21,10 +21,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Chats\Chats.csproj" />
     <ProjectReference Include="..\Contacts\Contacts.csproj" />
+    <ProjectReference Include="..\CreateAccount\CreateAccount.csproj" />
     <ProjectReference Include="..\Login\Login.csproj" />
     <ProjectReference Include="..\Messenges\Messenges.csproj" />
     <ProjectReference Include="..\Networking\Networking.csproj" />
     <ProjectReference Include="..\Profile\Profile.csproj" />
+    <ProjectReference Include="..\Viewer\Viewer.csproj" />
   </ItemGroup>
 
 </Project>

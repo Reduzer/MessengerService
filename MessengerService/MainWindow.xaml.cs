@@ -10,6 +10,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Viewer;
+
 namespace MessengerService
 {
     /// <summary>
@@ -21,13 +23,12 @@ namespace MessengerService
         private unsafe string* pPassword;
 
         private unsafe user user;
-        
+
+        Viewer.MainWindow newForm;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            MessageBox.Show("TEST");
         }
 
         private unsafe bool logIn(string name, string password)
@@ -47,9 +48,11 @@ namespace MessengerService
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
+            newForm = new Viewer.MainWindow();
+            newForm.Show();
+            this.Hide();
         }
     }
 }

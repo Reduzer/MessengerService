@@ -9,23 +9,25 @@
         Height="450" 
         Width="300">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Label Content="Name" Margin="766,94,460,567"/>
-        <Button Margin="843,458,221,201">
-            <Label Content="Test"/>
+        <Label Content="Name" 
+               Margin="100,38,113,351"/>
+       
+        <Label Content="Password"
+               Margin="98,202,84,183"/>
+
+        <Button Margin="11,353,183,10">
+            <Label 
+                Content="Forgot Password"/>
         </Button>
+        
 
-
-        <Label Content="Password" Margin="131,289,709,217"/>
+        <Button
+            Name="LoginButton"
+            Margin="228,357,13,12"
+            Click="LoginButton_Click">
+            <Label Content="Login"/>
+        </Button>
+        
     </Grid>
 </Window>
