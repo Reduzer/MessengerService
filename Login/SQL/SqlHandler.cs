@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Networking;
+
 using Login.Objects;
 
 namespace Login.SQL
@@ -15,6 +17,8 @@ namespace Login.SQL
 
         private unsafe string* sUserName;
         private unsafe string* sUserPassword;
+
+        private string loginType = "login";
 
         public SqlHandler() 
         {
@@ -29,9 +33,8 @@ namespace Login.SQL
 
             if (check())
             {
-                getSQLStatement();
-
-
+                networking.networking.sendMessageToServer(getSQLStatement(), loginType);
+                return true;
             }
             else
             {

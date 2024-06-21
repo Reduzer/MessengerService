@@ -1,4 +1,4 @@
-using Networking.ConnectionTesting;
+using Networking;
 using System;
 using System.Diagnostics;
 
@@ -14,9 +14,19 @@ namespace networking
         
         public static void Main()
         {
+            testConnection();
+        }
 
+        private static void testConnection()
+        {
+            m_client.sendMessageToServer("Connection Test", "Test");
+            m_server.getServerResponse();
         }
         
+        public static void sendMessageToServer(string message, string type)
+        {
+            sendMessageToServer(message, type);
+        }
     }
 }
 
