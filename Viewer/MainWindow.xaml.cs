@@ -20,5 +20,10 @@ namespace Viewer
         {
             InitializeComponent();
         }
+
+        public void onFirstLoad()
+        {
+            
+        }
     }
 }

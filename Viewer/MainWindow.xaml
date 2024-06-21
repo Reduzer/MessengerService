@@ -292,7 +292,68 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height ="9*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Border
+            Name = "BorderProfile"
+            Grid.Row="0"
+            Grid.Column="0"
+            BorderBrush="Black"
+            BorderThickness="2">
+            <Frame
+                Name="ProfilePage">
+
+            </Frame>
+                
+            
+        </Border>
+        
+        <Border
+            Name="BorderChats"
+            Grid.Row="1"
+            Grid.Column="0"
+            BorderBrush="Red"
+            BorderThickness="2">
+            <Frame
+                    Name="ChatListPage">
+            </Frame>
+            
+        </Border>
+        
+        <Border
+            Name="BorderChatHeader"
+            Grid.Row="0"
+            Grid.Column="1"
+            BorderBrush="Green"
+            BorderThickness="2">
+            <Frame
+                Name="ChatHeaderPage">
+
+            </Frame>
+            
+        </Border>
+        
+        <Border
+            Name="BorderMainPage"
+            Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="Blue"
+            BorderThickness="2">
+            
+            <Frame
+                Name="MainPage">
+
+            </Frame>
+        </Border>
     <Grid>
         <ComboBox Style="{DynamicResource ComboBoxStyle1}"
            Background="Black">
