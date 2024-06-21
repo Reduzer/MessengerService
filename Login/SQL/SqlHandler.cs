@@ -4,23 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Networking;
+
 using Login.Objects;
 
 namespace Login.SQL
 {
     internal class SqlHandler
     {
-
-        private checkIfSafe checkIfSafe;
-        private getInfo getInfo;
+        private createSqlStatement m_sqlStatement;
+        private checkIfSafe m_checkIfSafe;
 
         private unsafe string* sUserName;
         private unsafe string* sUserPassword;
 
+        private string loginType = "login";
+
         public SqlHandler() 
         {
-            checkIfSafe = new checkIfSafe();
-            getInfo = new getInfo();
+            m_sqlStatement = new createSqlStatement();
+            m_checkIfSafe = new checkIfSafe();
         }
 
         public unsafe bool Sql(string* name, string* password)
@@ -30,14 +33,8 @@ namespace Login.SQL
 
             if (check())
             {
-                if (sendToDataBase())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                networking.networking.sendMessageToServer(getSQLStatement(), loginType);
+                return true;
             }
             else
             {
@@ -59,7 +56,7 @@ namespace Login.SQL
 
         private unsafe bool check()
         {
-            if(checkIfSafe.isSafe(sUserName, sUserPassword))
+            if(m_checkIfSafe.isSafe(sUserName, sUserPassword))
             {
                 return true;
             }
@@ -79,11 +76,10 @@ namespace Login.SQL
             return null;
         }
 
-        private bool sendToDataBase()
+        private unsafe string getSQLStatement()
         {
-
-
-            return false;
+            string returnstring = m_sqlStatement.createStatement(sUserName);
+            return returnstring;
         }
 
     }

@@ -1,8 +1,10 @@
 ﻿using System;
 
 using Login.Exceptions;
+using Login.Objects;
 using Login.Security;
 using Login.SQL;
+using Login.src;
 
 namespace Login
 {
@@ -11,29 +13,65 @@ namespace Login
         private unsafe string* psName;
         private unsafe string* psPassword;
 
-        private SqlHandler m_sqlHandler;
+        private  SqlHandler m_sqlHandler;
+        private  trustedDevice m_trusted;
+
+        private UserObject m_User;
 
         public Login()
         {
             m_sqlHandler = new SqlHandler();
+            m_trusted = new trustedDevice();
         }
-        
-        public static void Main()
+
+        public void LogInClient()
         {
 
         }
 
         public unsafe void LogInClient(string* name, string* password)
         {
-            this.psName = name;
-            this.psPassword = password;
+            psName = name;
+            psPassword = password;
 
-            loginUser();
+            if (checkForTrused())
+            {
+                loginUser();
+            }
+            else
+            {
+                return;
+            }
         }
 
-        private unsafe void loginUser()
+        private unsafe bool loginUser()
         {
-            m_sqlHandler.Sql(psName, psPassword);
+            if(m_sqlHandler.Sql(psName, psPassword))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }    
+        }
+
+        private bool checkForTrused()
+        {
+            if (m_trusted.isDeviceKnown() != null)
+            {
+                //WIP
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static void Main()
+        {
+            
         }
     }
 }

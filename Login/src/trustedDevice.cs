@@ -1,7 +1,10 @@
-﻿using Login.SQL;
+﻿using Login.Exceptions;
+using Login.Objects;
+using Login.SQL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -11,10 +14,10 @@ namespace Login.src
 {
     internal class trustedDevice
     {
-        private SqlHandler handler;
+        private SqlHandler m_handler;
+        private macObject m_macObject;
 
         private string sMacAdress;
-        private bool bIsKnown;
 
         private string sUserName;
         private string sPassword;
@@ -23,7 +26,7 @@ namespace Login.src
 
         public trustedDevice()
         {
-            handler = new SqlHandler();
+            m_handler = new SqlHandler();
         }
 
         public List<string> isDeviceKnown()
@@ -51,30 +54,38 @@ namespace Login.src
 
         private bool sqlRequest()
         {
-            if (handler.checkMac(sMacAdress) != null)
+            try
             {
+                m_macObject = m_handler.checkMac(sMacAdress);
+
+                if (m_macObject != null)
+                {
 
 
-                return true;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (macAdressException e)
             {
+                Debug.WriteLine(e.ToString);
                 return false;
             }
+            catch(Exception e)
+            {
+                Debug.WriteLine(e.ToString);
+                return false;
+            }
+            
         }
 
         private bool getUserAccount()
         {
             
 
-
-            return true;
-        }
-
-        private bool accountIsKnown()
-        {
-            vs_Infos.Add(sUserName);
-            vs_Infos.Add(sPassword);
 
             return true;
         }
