@@ -24,7 +24,7 @@ namespace Viewer
 
         public void onFirstLoad()
         {
-            MainPage.Navigate(PageTypes.LiveChat.xaml.cs);
+            MainPage.Navigate("/PageTypes/LiveChat.xaml");
         }
     }
 }

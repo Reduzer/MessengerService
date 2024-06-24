@@ -8,6 +8,7 @@
     Title="LiveChat"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Background="White"
     mc:Ignorable="d">
 
     <Grid>
@@ -15,6 +16,8 @@
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
+
+        <Label Grid.Row="1" Foreground="Black">Test</Label>
 
         <ListBox Name="ChatViewListBox" />
 
