@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login.Enums
+using System.Security;
+
+
+namespace Login.Security
 {
-    public enum SQLTypes
+    internal class createKeyContainer
     {
-        Login = 0,
-        getMac = 1,
-        getUserInfo = 2
     }
 }

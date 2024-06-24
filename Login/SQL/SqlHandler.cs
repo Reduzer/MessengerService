@@ -15,8 +15,8 @@ namespace Login.SQL
         private createSqlStatement m_sqlStatement;
         private checkIfSafe m_checkIfSafe;
 
-        private unsafe string* sUserName;
-        private unsafe string* sUserPassword;
+        private unsafe string sUserName;
+        private unsafe string sUserPassword;
 
         private string loginType = "login";
 
@@ -26,7 +26,7 @@ namespace Login.SQL
             m_checkIfSafe = new checkIfSafe();
         }
 
-        public unsafe bool Sql(string* name, string* password)
+        public unsafe bool Sql(string name, string password)
         {
             this.sUserName = name;
             this.sUserPassword = password;

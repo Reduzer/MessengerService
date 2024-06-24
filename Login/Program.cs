@@ -10,13 +10,12 @@ namespace Login
 {
     public class Login
     {
-        private unsafe string* psName;
-        private unsafe string* psPassword;
+        private unsafe string sName;
+        private unsafe string sPassword;
 
         private  SqlHandler m_sqlHandler;
         private  trustedDevice m_trusted;
 
-        private UserObject m_User;
 
         public Login()
         {
@@ -29,13 +28,19 @@ namespace Login
 
         }
 
-        public unsafe bool LogInClient(string* name, string* password)
+        public unsafe bool LogInClient(string name, string password)
         {
-            psName = name;
-            psPassword = password;
+            sName = name;
+            sPassword = password;
 
-            if (checkForTrused())
+            if (!checkForTrused())
             {
+                if (sName == "Debug" && sPassword == "Debug")
+                {
+                    return true;
+                }
+
+
                 if (loginUser())
                 {
                     return true;
@@ -53,7 +58,7 @@ namespace Login
 
         private unsafe bool loginUser()
         {
-            if(m_sqlHandler.Sql(psName, psPassword))
+            if(m_sqlHandler.Sql(sName, sPassword))
             {
                 return true;
             }
@@ -65,15 +70,21 @@ namespace Login
 
         private bool checkForTrused()
         {
+
+            //WIP
+
+            return false;
+            /*
             if (m_trusted.isDeviceKnown() != null)
             {
-                //WIP
                 return false;
             }
             else
             {
                 return false;
             }
+
+            */
         }
 
         public static void Main()

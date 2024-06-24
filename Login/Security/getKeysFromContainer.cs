@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login.Objects
+namespace Login.src
 {
-    public class UserObject
+    internal class getKeysFromContainer
     {
-        string name;
-        string lastChatName;
-
     }
 }

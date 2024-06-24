@@ -11,7 +11,7 @@ namespace Login.SQL
 {
     internal class checkIfSafe
     {
-        public unsafe bool isSafe(string* name, string* password)
+        public unsafe bool isSafe(string name, string password)
         {
             try
             { 
@@ -30,10 +30,10 @@ namespace Login.SQL
             }
         }
 
-        private unsafe bool checkInput(string* name, string* password)
+        private unsafe bool checkInput(string name, string password)
         {
-            string sUserInput = *name;
-            string sUserPassword = *password;
+            string sUserInput = name;
+            string sUserPassword = password;
 
             if (sUserInput.Length > 180)
             {

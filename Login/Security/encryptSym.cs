@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 using System.Security.Cryptography;
 
+using Login.Security;
 
 namespace Login.Security
 {
     internal class encryptSym
     {
+        private generateSalt GetSalt;
+
 
         public encryptSym()
         {
-         
+            GetSalt = new generateSalt();
         }
 
         public string getEncryptetMessage(string sInput)
@@ -30,7 +33,9 @@ namespace Login.Security
         
         private string encryptSyme(string sInput)
         {
-            string sReturnString = "";
+            string sReturnString = String.Empty;
+
+            string salt = Convert.ToBase64String(GetSalt.getSalt());
 
             using (Aes myAes = Aes.Create())
             {

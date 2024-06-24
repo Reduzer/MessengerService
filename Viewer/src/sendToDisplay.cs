@@ -4,7 +4,10 @@ namespace Viewer;
 
 public class sendToDisplay
 {
-    
+    public static void sendMessageToDisplay(string message)
+    {
+
+    }
     
     public sendToDisplay()
     {

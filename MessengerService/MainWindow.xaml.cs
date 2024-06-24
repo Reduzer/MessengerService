@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 
 using Viewer;
 using Login;
+using System.Diagnostics;
 
 namespace MessengerService
 {
@@ -20,8 +21,8 @@ namespace MessengerService
     /// </summary>
     public partial class MainWindow : Window
     {
-        private unsafe string* pName;
-        private unsafe string* pPassword;
+        private unsafe string sName;
+        private unsafe string sPassword;
 
         Viewer.MainWindow newForm;
 
@@ -33,14 +34,11 @@ namespace MessengerService
             login = new Login.Login();
         }
 
-
-
         private unsafe bool logIn()
         {
-            MessageBox.Show("Login Called");
-            if(login.LogInClient(pName, pPassword))
+            if(login.LogInClient(sName, sPassword))
             {
-                MessageBox.Show("");
+                Debug.WriteLine("Name: " + sName + " Password: " + sPassword);
                 return true;
             }
             return false;
@@ -51,8 +49,8 @@ namespace MessengerService
             string name = TextBoxName.Text;
             string password = TextBoxPassword.Text;
 
-            pName = &name;
-            pPassword = &password;
+            sName = name;
+            sPassword = password;
         }
 
 

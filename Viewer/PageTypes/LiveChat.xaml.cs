@@ -10,18 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Viewer.PageTypes
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for LiveChat.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class LiveChat : Page
     {
-        public Window1()
+        public LiveChat()
         {
             InitializeComponent();
+        }
+
+        public void sendMessageToDisplay(string msg, string name)
+        {
+            ChatViewListBox.Items.Add(name +": " + msg);
         }
     }
 }

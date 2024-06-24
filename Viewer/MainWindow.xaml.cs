@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Viewer
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace Viewer
 
         public void onFirstLoad()
         {
-            
+            MainPage.Navigate(PageTypes.LiveChat.xaml.cs);
         }
     }
 }
