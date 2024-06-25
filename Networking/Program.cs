@@ -5,6 +5,10 @@ using System.Diagnostics;
 using networking.Client;
 using networking.Server;
 
+using System.Windows;
+using System.Windows.Forms;
+
+
 namespace networking
 {
     public class networking
@@ -14,18 +18,36 @@ namespace networking
         
         public static void Main()
         {
-            testConnection();
+            if (testConnection())
+            {
+                System.Windows.MessageBox.Show();
+            }
         }
 
-        private static void testConnection()
+        private static bool testConnection()
         {
-            m_client.sendMessageToServer("Connection Test", "Test");
-            m_server.getServerResponse();
+            try
+            {
+                m_client.sendMessageToServer("Connection Test", "Test");
+                m_server.getServerResponse();
+
+                return true;
+            }
+            catch (ConnectionErrorException e)
+            {
+                return false;
+            }
         }
         
         public static void sendMessageToServer(string message, string type)
         {
-            sendMessageToServer(message, type);
+            try
+            {
+                m_client.sendMessageToServer(message, type);
+            }
+            catch(Exception e){
+                       
+            }
         }
     }
 }

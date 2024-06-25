@@ -5,12 +5,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MessengerService"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="LoginWindow"
     Title="Login Messenger by Reduzer"
     Width="310"
     Height="450"
     ResizeMode="NoResize"
     mc:Ignorable="d">
-    <Grid>
+    <Grid Style="{DynamicResource GridStyle1}">
 
         <Label
             Name="LabelName"
@@ -18,14 +19,16 @@
             Padding="0"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
-            Content="Name" />
+            Content="Name"
+            Style="{DynamicResource LabelStyle1}" />
 
         <Label
             Margin="92,170,90,215"
             Padding="0"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
-            Content="Password" />
+            Content="Password"
+            Style="{DynamicResource LabelStyle1}" />
 
         <Button
             Name="ForgotPasswordButton"
@@ -68,7 +71,5 @@
             Background="#404040"
             Foreground="White"
             Style="{DynamicResource PasswordBoxStyle1}" />
-
-
     </Grid>
 </Window>

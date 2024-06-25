@@ -3,9 +3,9 @@
     <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA" />
     <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5" />
     <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
-        <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="Background" Value="#FF303030" />
+        <Setter Property="BorderBrush" Value="Red" />
+        <Setter Property="Foreground" Value="White" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />

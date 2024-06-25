@@ -34,8 +34,13 @@ namespace MessengerService
             login = new Login.Login();
         }
 
-        private unsafe bool logIn()
+        private bool logIn()
         {
+            if (TextBoxName.Text == String.Empty || TextBoxPassword.Password == String.Empty)
+            {
+                return false;
+            }
+
             if(login.LogInClient(sName, sPassword))
             {
                 Debug.WriteLine("Name: " + sName + " Password: " + sPassword);
@@ -44,7 +49,7 @@ namespace MessengerService
             return false;
         }
 
-        private unsafe void getInput()
+        private void getInput()
         {
             string name = TextBoxName.Text;
             string password = TextBoxPassword.Password;
@@ -72,7 +77,7 @@ namespace MessengerService
 
         private void ForgotPasswordButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Work in Progress");
         }
     }
 }
