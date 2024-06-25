@@ -18,6 +18,9 @@ namespace Login.SQL
         private unsafe string sUserName;
         private unsafe string sUserPassword;
 
+        private readonly string userType = "user";
+        private readonly string macType = "mac";
+
         private string loginType = "login";
 
         public SqlHandler() 
@@ -26,14 +29,14 @@ namespace Login.SQL
             m_checkIfSafe = new checkIfSafe();
         }
 
-        public unsafe bool Sql(string name, string password)
+        public bool Sql(string name, string password)
         {
             this.sUserName = name;
             this.sUserPassword = password;
 
             if (check())
             {
-                networking.networking.sendMessageToServer(getSQLStatement(), loginType);
+                networking.networking.sendMessageToServer(getSQLStatement(userType), loginType);
                 return true;
             }
             else
@@ -42,17 +45,6 @@ namespace Login.SQL
             }
         }
 
-        public macObject checkMac(string macAdress)
-        {
-            if (macIsKnown())
-            {
-                return getMacObject();
-            }
-            else 
-            {
-                return null;
-            }
-        }
 
         private unsafe bool check()
         {
@@ -76,10 +68,33 @@ namespace Login.SQL
             return null;
         }
 
-        private unsafe string getSQLStatement()
+
+        public macObject checkMac(string macAdress)
         {
-            string returnstring = m_sqlStatement.createStatement(sUserName);
-            return returnstring;
+            if (macIsKnown())
+            {
+                return getMacObject();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private unsafe string getSQLStatement(string requester)
+        {
+            string sReturnString;
+
+            if (requester == "username")
+            {
+               sReturnString = m_sqlStatement.createStatement("user");
+            }
+            else
+            {
+                sReturnString = m_sqlStatement.createStatement("mac");
+            }
+             
+            return sReturnString;
         }
 
     }

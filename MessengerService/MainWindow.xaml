@@ -27,22 +27,26 @@
             VerticalContentAlignment="Center"
             Content="Password" />
 
-        <Button Margin="11,353,178,10">
-
-            <Label Content="Forgot Password" />
-
-        </Button>
+        <Button
+            Name="ForgotPasswordButton"
+            Margin="15,340,210,15"
+            Padding="0"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Click="ForgotPasswordButton_Click"
+            Content="Forgot &#10;Password"
+            Style="{DynamicResource ButtonStyle1}" />
 
 
         <Button
             Name="LoginButton"
-            Margin="228,365,15,15"
+            Margin="210,340,15,15"
             Padding="0"
-            Click="LoginButton_Click">
-
-            <Label Content="Login" />
-
-        </Button>
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Click="LoginButton_Click"
+            Content="Login"
+            Style="{DynamicResource ButtonStyle1}" />
 
 
         <TextBox
@@ -52,16 +56,19 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#404040"
-            Foreground="White" />
+            Foreground="White"
+            Style="{DynamicResource TextBoxStyle1}" />
 
-        <TextBox
+        <PasswordBox
             Name="TextBoxPassword"
-            Margin="36,228,36,133"
+            Margin="36,230,36,140"
             Padding="0"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#404040"
-            Foreground="White" />
+            Foreground="White"
+            Style="{DynamicResource PasswordBoxStyle1}" />
+
 
     </Grid>
 </Window>

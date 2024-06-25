@@ -10,8 +10,8 @@ namespace Login
 {
     public class Login
     {
-        private unsafe string sName;
-        private unsafe string sPassword;
+        private string sName;
+        private string sPassword;
 
         private  SqlHandler m_sqlHandler;
         private  trustedDevice m_trusted;
@@ -23,32 +23,21 @@ namespace Login
             m_trusted = new trustedDevice();
         }
 
-        public void LogInClient()
-        {
-
-        }
-
-        public unsafe bool LogInClient(string name, string password)
+        public bool LogInClient(string name, string password)
         {
             sName = name;
             sPassword = password;
 
-            if (!checkForTrused())
+            // !checkForTrused()
+            if (true)
             {
                 if (sName == "Debug" && sPassword == "Debug")
                 {
                     return true;
                 }
 
+                return loginUser();
 
-                if (loginUser())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
             }
             else
             {
@@ -56,25 +45,20 @@ namespace Login
             }
         }
 
-        private unsafe bool loginUser()
+        private bool loginUser()
         {
-            if(m_sqlHandler.Sql(sName, sPassword))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }    
+            return m_sqlHandler.Sql(sName, sPassword);  
         }
 
+        /*
+          
         private bool checkForTrused()
         {
 
-            //WIP
+            
 
             return false;
-            /*
+            
             if (m_trusted.isDeviceKnown() != null)
             {
                 return false;
@@ -84,8 +68,10 @@ namespace Login
                 return false;
             }
 
-            */
+            
         }
+
+        */
 
         public static void Main()
         {

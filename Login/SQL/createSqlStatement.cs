@@ -8,17 +8,31 @@ namespace Login.SQL
 {
     internal class createSqlStatement
     {
-        private unsafe string sUserName;
+        private string sUserName;
+        private string sMacAddress;
         
-        public unsafe string createStatement(string name)
+        public string createStatement(string name)
         {
             string returnString;
 
             this.sUserName = name;
 
-            returnString = "SELECT password FROM users WHERE name = " + sUserName;
+            returnString = "SELECT password FROM users WHERE name = '" + sUserName + "'";
   
             return returnString;
         }
+
+        public string MacAdressStatement(string macAdress)
+        {
+            string returnString;
+
+            this.sMacAddress = macAdress;
+
+            returnString = "SELECT userID FROM trusteddevices WHERE macaddress = '" + sMacAddress + "'";
+
+            return returnString;
+        }
     }
+
+    
 }

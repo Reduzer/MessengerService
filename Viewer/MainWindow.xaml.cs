@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Viewer.PageTypes;
 
 
 namespace Viewer
@@ -20,11 +21,13 @@ namespace Viewer
         public MainWindow()
         {
             InitializeComponent();
+
+            onFirstLoad();
         }
 
         public void onFirstLoad()
         {
-            MainPage.Navigate("/PageTypes/LiveChat.xaml");
+            MainPage.Content = new LiveChat();
         }
     }
 }

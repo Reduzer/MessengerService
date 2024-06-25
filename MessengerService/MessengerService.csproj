@@ -8,6 +8,7 @@
     <UseWPF>true</UseWPF>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <SignAssembly>True</SignAssembly>
+    <ApplicationIcon>Visuals\poo-storm.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,6 +18,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <FileAlignment>1024</FileAlignment>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Visuals\poo-storm.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Chats\Chats.csproj" />

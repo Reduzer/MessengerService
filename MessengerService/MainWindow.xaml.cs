@@ -47,7 +47,7 @@ namespace MessengerService
         private unsafe void getInput()
         {
             string name = TextBoxName.Text;
-            string password = TextBoxPassword.Text;
+            string password = TextBoxPassword.Password;
 
             sName = name;
             sPassword = password;
@@ -62,12 +62,17 @@ namespace MessengerService
             {
                 newForm = new Viewer.MainWindow();
                 newForm.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Your inputs are invalid, please check");
             }
+        }
+
+        private void ForgotPasswordButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
