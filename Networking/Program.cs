@@ -6,7 +6,6 @@ using networking.Client;
 using networking.Server;
 
 using System.Windows;
-using System.Windows.Forms;
 
 
 namespace networking
@@ -20,7 +19,7 @@ namespace networking
         {
             if (testConnection())
             {
-                System.Windows.MessageBox.Show();
+
             }
         }
 
