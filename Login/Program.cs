@@ -16,7 +16,6 @@ namespace Login
         private  SqlHandler m_sqlHandler;
         private  trustedDevice m_trusted;
 
-
         public Login()
         {
             m_sqlHandler = new SqlHandler();
@@ -49,29 +48,6 @@ namespace Login
         {
             return m_sqlHandler.Sql(sName, sPassword);  
         }
-
-        /*
-          
-        private bool checkForTrused()
-        {
-
-            
-
-            return false;
-            
-            if (m_trusted.isDeviceKnown() != null)
-            {
-                return false;
-            }
-            else
-            {
-                return false;
-            }
-
-            
-        }
-
-        */
 
         public static void Main()
         {

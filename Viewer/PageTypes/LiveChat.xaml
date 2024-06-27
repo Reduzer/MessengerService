@@ -11,15 +11,24 @@
     Background="White"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <ResourceDictionary Source="..\Components\MergedLiveChat.xaml" />
+    </Page.Resources>
+
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="1" Foreground="Black">Test</Label>
+        <TextBox x:Name="InputBox" Grid.Row="1" />
 
-        <ListBox Name="ChatViewListBox" />
+        <ListBox
+            Name="ChatViewListBox"
+            Foreground="White"
+            Style="{DynamicResource ListBoxStyle1}" />
 
 
     </Grid>

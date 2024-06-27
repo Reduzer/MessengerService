@@ -9,6 +9,7 @@
     Title="Login Messenger by Reduzer"
     Width="310"
     Height="450"
+    KeyDown="Window_KeyDown"
     ResizeMode="NoResize"
     mc:Ignorable="d">
     <Grid Style="{DynamicResource GridStyle1}">

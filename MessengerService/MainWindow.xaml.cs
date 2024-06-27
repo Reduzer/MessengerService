@@ -1,4 +1,4 @@
-﻿using MessengerService.Objects;
+﻿using MessengerService;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -65,7 +65,7 @@ namespace MessengerService
 
             if (logIn())
             {
-                newForm = new Viewer.MainWindow();
+                newForm = new Viewer.MainWindow(sName);
                 newForm.Show();
                 this.Close();
             }
@@ -78,6 +78,14 @@ namespace MessengerService
         private void ForgotPasswordButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Work in Progress");
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                LoginButton_Click(null, null);
+            }
         }
     }
 }

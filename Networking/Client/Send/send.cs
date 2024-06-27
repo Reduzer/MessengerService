@@ -1,4 +1,5 @@
-﻿using System.Net.Sockets;
+﻿using Networking;
+using System.Net.Sockets;
 using System.Text;
 
 namespace networking.Client;
@@ -33,17 +34,25 @@ public class send
     //Comunicates with the Server
     private void handleCommunication()
     {
-        m_reader = new StreamReader(m_tcpClient.GetStream(), Encoding.ASCII);
-        m_writer = new StreamWriter(m_tcpClient.GetStream(), Encoding.ASCII);
-
-
-        sData[0] = sType;
-        sData[1] = sMessage;
-
-        for (int i = 0; i < 2; i++)
+        try
         {
-            m_writer.WriteLine(sData[i]);
-            m_writer.Flush();
+            m_reader = new StreamReader(m_tcpClient.GetStream(), Encoding.ASCII);
+            m_writer = new StreamWriter(m_tcpClient.GetStream(), Encoding.ASCII);
+
+
+            sData[0] = sType;
+            sData[1] = sMessage;
+
+            for (int i = 0; i < 2; i++)
+            {
+                m_writer.WriteLine(sData[i]);
+                m_writer.Flush();
+            }
         }
+        catch (Exception e)
+        {
+            throw new ConnectionErrorException();
+        }
+        
     }
 }

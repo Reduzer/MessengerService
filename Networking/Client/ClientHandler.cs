@@ -20,7 +20,7 @@ public class ClientHandler
     {
         sMessage = message;
         sType = type;
-
+     
         m_send.sendMessage(sMessage, type);
     }
 }
