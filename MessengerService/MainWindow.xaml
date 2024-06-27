@@ -14,63 +14,113 @@
     mc:Ignorable="d">
     <Grid Style="{DynamicResource GridStyle1}">
 
-        <Label
-            Name="LabelName"
-            Margin="110,20,110,370"
-            Padding="0"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Content="Name"
-            Style="{DynamicResource LabelStyle1}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30px" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+
+        <Border
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Background="#202020"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+
+                <Button
+                    x:Name="Minimizebtn"
+                    Width="30"
+                    Click="Minimizebtn_Click"
+                    Content="_"
+                    Style="{DynamicResource TitleButton}" />
+
+                <Button
+                    x:Name="Closebtn"
+                    Width="30"
+                    Click="Closebtn_Click"
+                    Content="X"
+                    Style="{DynamicResource TitleButton}" />
+
+            </StackPanel>
+        </Border>
 
         <Label
-            Margin="92,170,90,215"
+            Name="LabelName"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="0,20,0,0"
             Padding="0"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
-            Content="Password"
-            Style="{DynamicResource LabelStyle1}" />
+            Content="Username:"
+            FontSize="20"
+            Foreground="White" />
+        <TextBox
+            Name="TextBoxName"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Margin="20,20,20,40"
+            Padding="10"
+            VerticalContentAlignment="Center"
+            FontSize="20"
+            Style="{DynamicResource TextBoxStyle1}" />
+
+        <Label
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            HorizontalContentAlignment="Center"
+            Content="Password:"
+            FontSize="20"
+            Foreground="White" />
+
+
+        <PasswordBox
+            Name="TextBoxPassword"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Margin="20,20,20,40"
+            Padding="10"
+            VerticalContentAlignment="Center"
+            FontSize="20"
+            KeyDown="TextBoxPassword_KeyDown"
+            Style="{DynamicResource PasswordBoxStyle1}" />
+
 
         <Button
             Name="ForgotPasswordButton"
-            Margin="15,340,210,15"
-            Padding="0"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
+            Grid.Row="5"
+            Grid.Column="0"
+            Margin="10,20,10,20"
             Click="ForgotPasswordButton_Click"
-            Content="Forgot &#10;Password"
-            Style="{DynamicResource ButtonStyle1}" />
+            FontSize="15"
+            Foreground="White"
+            Style="{DynamicResource ButtonStyle1}">
 
+            <TextBlock TextAlignment="Center">
+                Forgot<LineBreak />
+                Password</TextBlock>
+        </Button>
 
         <Button
             Name="LoginButton"
-            Margin="210,340,15,15"
+            Grid.Row="5"
+            Grid.Column="1"
+            Margin="10,20,10,20"
             Padding="0"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Click="LoginButton_Click"
             Content="Login"
+            FontSize="15"
+            Foreground="White"
             Style="{DynamicResource ButtonStyle1}" />
-
-
-        <TextBox
-            Name="TextBoxName"
-            Margin="36,83,36,279"
-            Padding="0"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Background="#404040"
-            Foreground="White"
-            Style="{DynamicResource TextBoxStyle1}" />
-
-        <PasswordBox
-            Name="TextBoxPassword"
-            Margin="36,230,36,140"
-            Padding="0"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Background="#404040"
-            Foreground="White"
-            Style="{DynamicResource PasswordBoxStyle1}" />
     </Grid>
 </Window>

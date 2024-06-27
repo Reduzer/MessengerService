@@ -87,5 +87,28 @@ namespace MessengerService
                 LoginButton_Click(null, null);
             }
         }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Closebtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimizebtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void TextBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                LoginButton_Click(sender, e);
+            }
+        }
     }
 }

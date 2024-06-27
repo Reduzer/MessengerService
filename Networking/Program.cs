@@ -54,7 +54,7 @@ namespace networking
             }
             else
             {
-                Viewer.MainWindow.ShowMessageBox();
+                
             }
         }
     }
