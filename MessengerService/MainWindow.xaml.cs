@@ -61,6 +61,11 @@ namespace MessengerService
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            newForm = new Viewer.MainWindow(sName);
+            newForm.Show();
+            this.Close();
+
+            /*
             getInput();
 
             if (logIn())
@@ -73,6 +78,7 @@ namespace MessengerService
             {
                 MessageBox.Show("Your inputs are invalid, please check");
             }
+            */
         }
 
         private void ForgotPasswordButton_Click(object sender, RoutedEventArgs e)
@@ -101,14 +107,6 @@ namespace MessengerService
         private void Minimizebtn_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
-        }
-
-        private void TextBoxPassword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Return)
-            {
-                LoginButton_Click(sender, e);
-            }
         }
     }
 }

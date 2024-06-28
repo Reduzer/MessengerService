@@ -16,7 +16,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64f25160-8cdf-4265-89f0-46b7410dfb97" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Networking/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Networking/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Login/Login.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Login/Login.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Login/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Login/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Viewer/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Viewer/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Viewer/PageTypes/ChatHeaderPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Viewer/PageTypes/ChatHeaderPage.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,27 +40,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.Chats.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.MessengerService.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Networking&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.Chats.executor": "Run",
+    ".NET Project.MessengerService.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Production",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/reduzer/.var/app/com.jetbrains.Rider/config/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
-      &quot;/home/reduzer/.var/app/com.jetbrains.Rider/config/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
-      &quot;/home/reduzer/.var/app/com.jetbrains.Rider/data/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\FDeubner\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\FDeubner\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\FDeubner\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Project.MessengerService">
     <configuration name="Chats" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -235,6 +242,7 @@
       <workItem from="1718373704496" duration="155000" />
       <workItem from="1718373863635" duration="294000" />
       <workItem from="1718382859133" duration="1305000" />
+      <workItem from="1719561822050" duration="318000" />
     </task>
     <servers />
   </component>

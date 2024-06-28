@@ -1,12 +1,22 @@
-﻿<Page x:Class="Viewer.PageTypes.ChatHeaderPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:Viewer.PageTypes"
-      mc:Ignorable="d"
-      Title="ChatHeaderPage" Height="450" Width="800">
+﻿<Page
+    x:Class="Viewer.PageTypes.ChatHeaderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Viewer.PageTypes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ChatHeaderPage"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+
+
+    <Page.Resources>
+        <ResourceDictionary Source="..\Components\ChatHeader\Merged.xaml" />
+    </Page.Resources>
+
     <Grid>
-        
+        <Label Content="HALLO" Style="{DynamicResource HeaderLabel}" />
+
     </Grid>
 </Page>

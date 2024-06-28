@@ -8,6 +8,10 @@ namespace networking.Server;
 
 public class ServerHandler
 {
+    private readonly Socket mSocket;
+    private readonly int nPort;
+
+
     public ServerHandler()
     {
         

@@ -11,6 +11,7 @@
     Height="450"
     KeyDown="Window_KeyDown"
     ResizeMode="NoResize"
+    WindowStyle="None"
     mc:Ignorable="d">
     <Grid Style="{DynamicResource GridStyle1}">
 
@@ -46,8 +47,7 @@
                     x:Name="Closebtn"
                     Width="30"
                     Click="Closebtn_Click"
-                    Content="X"
-                    Style="{DynamicResource TitleButton}" />
+                    Content="X" />
 
             </StackPanel>
         </Border>
@@ -90,7 +90,6 @@
             Padding="10"
             VerticalContentAlignment="Center"
             FontSize="20"
-            KeyDown="TextBoxPassword_KeyDown"
             Style="{DynamicResource PasswordBoxStyle1}" />
 
 

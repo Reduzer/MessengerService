@@ -30,11 +30,6 @@ namespace Login
             // !checkForTrused()
             if (true)
             {
-                if (sName == "Debug" && sPassword == "Debug")
-                {
-                    return true;
-                }
-
                 return loginUser();
 
             }
@@ -47,6 +42,21 @@ namespace Login
         private bool loginUser()
         {
             return m_sqlHandler.Sql(sName, sPassword);  
+        }
+
+        private bool checkForTrused()
+        {
+            /*
+             * 
+             * Wie Umsetzbar?
+             * Lokale speicherung von Daten?
+             * Wenn ja, wie?
+            */
+            m_trusted.isDeviceKnown();
+
+
+
+            return false;
         }
 
         public static void Main()
