@@ -10,5 +10,7 @@
     Height="450"
     Background="White"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <Button />
+    </Grid>
 </Page>

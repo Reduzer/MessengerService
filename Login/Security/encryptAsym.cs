@@ -11,7 +11,20 @@ namespace Login.Security
 {
     internal class encryptAsym
     {
+        private RSA m_rsa;
+        private string sMessage;
 
+        private string skey;
 
+        public encryptAsym()
+        {
+            
+        }
+
+        public void encryptData(string message, string key)
+        {
+            this.sMessage = message;
+            this.skey = key;
+        }
     }
 }
