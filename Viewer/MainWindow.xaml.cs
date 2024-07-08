@@ -28,7 +28,9 @@ namespace Viewer
         ProfilePage profilePage;
         ChatListPage chatListPage;
         ChatHeaderPage chatHeaderPage;
-        LockedPage lockedPage;
+        LockedPage lockedPage1;
+        LockedPage lockedPage2;
+        LockedPage lockedPage3;
 
         public MainWindow(string name, bool fullLogin)
         {
@@ -44,7 +46,7 @@ namespace Viewer
             }
             else
             {
-
+                onFirstLoadLocked();
             }
             
         }
@@ -65,12 +67,14 @@ namespace Viewer
         private void onFirstLoadLocked()
         {
             liveChat = new LiveChat();
-            lockedPage = new LockedPage();
+            lockedPage1 = new LockedPage();
+            lockedPage2 = new LockedPage();
+            lockedPage3 = new LockedPage();
 
             MainPage.Content = liveChat;
-            ProfilePage.Content = lockedPage;
-            ChatHeaderPage.Content = lockedPage;
-            chatListPage.Content = lockedPage;
+            ProfilePage.Content = lockedPage1;
+            ChatHeaderPage.Content = lockedPage2;
+            ChatListPage.Content = lockedPage3;
         }
 
         private void Page_KeyDown(object sender, KeyEventArgs e)

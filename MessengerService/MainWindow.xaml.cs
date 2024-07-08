@@ -96,10 +96,6 @@ namespace MessengerService
                 newForm.Show();
                 this.Close();
             }
-            else
-            {
-                MessageBox.Show("Your inputs are invalid, please check");
-            }
         }
 
         private void ForgotPasswordButton_Click(object sender, RoutedEventArgs e)
