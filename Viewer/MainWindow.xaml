@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Viewer"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
-    Title="MainWindow"
+    Title="Chatterrich"
     Width="800"
     Height="450"
     MinWidth="800"
@@ -48,8 +48,7 @@
             Name="BorderChatHeader"
             Grid.Row="0"
             Grid.Column="1"
-            BorderBrush="Black"
-            BorderThickness="2">
+            BorderBrush="Black">
             <Frame Name="ChatHeaderPage" />
 
         </Border>

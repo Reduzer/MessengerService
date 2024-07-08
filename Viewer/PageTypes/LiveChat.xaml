@@ -12,7 +12,7 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <ResourceDictionary Source="..\Components\MergedLiveChat.xaml" />
+        <ResourceDictionary Source="..\Components\LiveChat\MergedLiveChat.xaml" />
     </Page.Resources>
 
     <Grid>
@@ -21,13 +21,31 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="InputBox" Grid.Row="1" />
-
-        <ListBox
-            Name="ChatViewListBox"
-            Foreground="White"
-            Style="{DynamicResource ListBoxStyle1}" />
+        <TextBox
+            x:Name="InputBox"
+            Grid.Row="1"
+            Style="{DynamicResource TextBoxStyle}" />
 
 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <ListBox
+                Name="ChatViewListBoxSend"
+                Grid.Column="1"
+                Foreground="White"
+                Style="{DynamicResource ListBoxStyle2}" >
+                <ListBoxItem></ListBoxItem>
+            </ListBox>
+
+            <ListBox
+                Name="ChatViewListBoxRecieved"
+                Grid.Column="0"
+                Foreground="White"
+                Style="{DynamicResource ListBoxStyle1}" />
+        </Grid>
     </Grid>
 </Page>

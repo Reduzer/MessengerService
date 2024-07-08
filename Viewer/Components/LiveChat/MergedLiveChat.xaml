@@ -3,5 +3,6 @@
         <ResourceDictionary Source="ListBox.xaml" />
         <ResourceDictionary Source="Grid.xaml" />
         <ResourceDictionary Source="TextBox.xaml" />
+        <ResourceDictionary Source="ListBoxSend.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

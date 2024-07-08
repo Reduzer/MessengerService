@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,20 +16,13 @@ using System.Windows.Shapes;
 namespace Viewer.PageTypes
 {
     /// <summary>
-    /// Interaction logic for LiveChat.xaml
+    /// Interaction logic for LockedPage.xaml
     /// </summary>
-    public partial class LiveChat : Page
+    public partial class LockedPage : Page
     {
-        public LiveChat()
+        public LockedPage()
         {
             InitializeComponent();
         }
-
-        public void sendMessageToDisplay(string msg, string name)
-        {
-            ChatViewListBoxSend.Items.Add(name +": " + msg);
-        }
-
-        
     }
 }

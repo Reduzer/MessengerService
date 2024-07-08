@@ -22,21 +22,34 @@ namespace Viewer
         private string sMessage;
         private string sName;
 
+        private bool bFullLogin = false;
+
         LiveChat liveChat;
         ProfilePage profilePage;
         ChatListPage chatListPage;
         ChatHeaderPage chatHeaderPage;
+        LockedPage lockedPage;
 
-        public MainWindow(string name)
+        public MainWindow(string name, bool fullLogin)
         {
             sName = name;
+            bFullLogin = fullLogin;
 
             InitializeComponent();
 
-            onFirstLoad();
+
+            if(bFullLogin)
+            {
+                onFirstLoad();
+            }
+            else
+            {
+
+            }
+            
         }
 
-        public void onFirstLoad()
+        private void onFirstLoad()
         {
             liveChat = new LiveChat();
             profilePage = new ProfilePage();
@@ -47,6 +60,17 @@ namespace Viewer
             ProfilePage.Content = profilePage;
             ChatListPage.Content = chatListPage;
             ChatHeaderPage.Content = chatHeaderPage;
+        }
+
+        private void onFirstLoadLocked()
+        {
+            liveChat = new LiveChat();
+            lockedPage = new LockedPage();
+
+            MainPage.Content = liveChat;
+            ProfilePage.Content = lockedPage;
+            ChatHeaderPage.Content = lockedPage;
+            chatListPage.Content = lockedPage;
         }
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
