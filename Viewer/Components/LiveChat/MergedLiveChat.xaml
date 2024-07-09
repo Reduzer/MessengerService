@@ -1,8 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ListBox.xaml" />
         <ResourceDictionary Source="Grid.xaml" />
         <ResourceDictionary Source="TextBox.xaml" />
-        <ResourceDictionary Source="ListBoxSend.xaml" />
+        <ResourceDictionary Source="LableStyle.xaml" />
+        <ResourceDictionary Source="ScrollViewer.xaml" />
+        <ResourceDictionary Source="WrapperPannel.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

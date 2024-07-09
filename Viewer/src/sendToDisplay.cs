@@ -4,7 +4,7 @@ namespace Viewer;
 
 public class sendToDisplay
 {
-    public static void sendMessageToDisplay(string message)
+    public static void sendMessageToDisplay(string message, string name)
     {
 
     }
@@ -13,17 +13,4 @@ public class sendToDisplay
     {
         
     }
-
-    public void setMessageToDisplay()
-    {
-        
-    }
-
-    public void setChatToDisplay()
-    {
-        
-    }
-    
-    
-    
 }

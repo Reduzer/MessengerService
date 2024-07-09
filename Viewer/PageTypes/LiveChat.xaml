@@ -26,26 +26,46 @@
             Grid.Row="1"
             Style="{DynamicResource TextBoxStyle}" />
 
-
-        <Grid>
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
-            <ListBox
-                Name="ChatViewListBoxSend"
-                Grid.Column="1"
-                Foreground="White"
-                Style="{DynamicResource ListBoxStyle2}" >
-                <ListBoxItem></ListBoxItem>
-            </ListBox>
+            <Frame Name="ChatFrame" Grid.Column="1">
+                <Frame.Content>
+                    <ScrollViewer
+                        Name="SendViewer"
+                        HorizontalScrollBarVisibility="Disabled"
+                        VerticalScrollBarVisibility="Auto">
+                        <WrapPanel
+                            Name="MessagesSendWrapPannel"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Stretch"
+                            Orientation="Vertical"
+                            Style="{DynamicResource WrapPanelStyle1}" />
+                    </ScrollViewer>
+                </Frame.Content>
+            </Frame>
 
-            <ListBox
-                Name="ChatViewListBoxRecieved"
-                Grid.Column="0"
-                Foreground="White"
-                Style="{DynamicResource ListBoxStyle1}" />
+            <Frame Name="RecievedFrame" Grid.Column="0">
+                <Frame.Content>
+                    <ScrollViewer
+                        Name="RecievedViewer"
+                        HorizontalScrollBarVisibility="Disabled"
+                        VerticalScrollBarVisibility="Auto">
+                        <WrapPanel
+                            Name="MessagesRecievedWrapPannel"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Stretch"
+                            Orientation="Vertical"
+                            Style="{DynamicResource WrapPanelStyle1}" />
+
+                    </ScrollViewer>
+                </Frame.Content>
+            </Frame>
         </Grid>
+
+
     </Grid>
 </Page>
