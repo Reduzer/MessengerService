@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using Viewer;
 using Login;
 using System.Diagnostics;
+using MessengerService.Windows;
 
 namespace MessengerService
 {
@@ -21,12 +22,16 @@ namespace MessengerService
     /// </summary>
     public partial class MainWindow : Window
     {
-        private unsafe string sName;
-        private unsafe string sPassword;
+        private readonly string sAlertMessage = "";
+        private readonly string sNoLoginStartMessage = "";
+
+        private string sName;
+        private string sPassword;
 
         private bool fullLogin;
 
         Viewer.MainWindow newForm;
+        AlertBox alertBox;
 
         private Login.Login login;
 
@@ -45,15 +50,20 @@ namespace MessengerService
         {
             if (TextBoxName.Text == String.Empty && TextBoxPassword.Password == String.Empty)
             {
-                MessageBox.Show("Du hast keinen Namen angegeben, wenn du dich nicht anmelden willst, gebe bitte einen Namen an und klicke dann auf anmelden");
-                
+                alertBox = new AlertBox(sAlertMessage);
+                alertBox.Show();
                 return false;
             
             }
 
-            if (TextBoxName.Text != String.Empty && TextBoxPassword.Password == String.Empty)
+            if (TextBoxName.Text != String.Empty && TextBoxPassword.Password == String.Empty) 
             {
-                MessageBox.Show("Du wirst nun ohne Anmeldung weitergeleitet");
+                alertBox = new AlertBox(sAlertMessage);
+                alertBox.Show();
+                while ()
+                {
+                    this.
+                }
                 fullLogin = false;
                 return true;
             }
@@ -128,6 +138,11 @@ namespace MessengerService
         private void Minimizebtn_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        public void AlertBoxClosed(object sender, EventArgs e)
+        {
+
         }
     }
 }
