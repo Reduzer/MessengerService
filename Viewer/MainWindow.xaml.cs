@@ -44,7 +44,7 @@ namespace Viewer
             }
             else
             {
-
+                onFirstLoadLocked();
             }
             
         }
@@ -68,9 +68,6 @@ namespace Viewer
             lockedPage = new LockedPage();
 
             MainPage.Content = liveChat;
-            ProfilePage.Content = lockedPage;
-            ChatHeaderPage.Content = lockedPage;
-            chatListPage.Content = lockedPage;
         }
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
