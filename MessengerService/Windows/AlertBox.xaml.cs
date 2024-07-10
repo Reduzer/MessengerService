@@ -20,9 +20,34 @@ namespace MessengerService.Windows
     public partial class AlertBox : Window
     {
         private string message;
-        public AlertBox(string message)
+        public AlertBox(string message, bool ShowOk, bool ShowNo, bool ShowCancel)
         {
             InitializeComponent();
+
+            if (ShowOk)
+            {
+                BtnYes.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnYes.Visibility = Visibility.Hidden;
+            }
+            if (ShowNo)
+            {
+                BtnNo.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnNo.Visibility = Visibility.Hidden;
+            }
+            if (ShowCancel)
+            {
+                BtnCancel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnCancel.Visibility = Visibility.Hidden;
+            }
 
             this.message = message;
 
@@ -31,7 +56,7 @@ namespace MessengerService.Windows
 
         private void BtnYes_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.
+            //MainWindow.
             this.Close();
         }
 
