@@ -11,6 +11,7 @@
     Height="450"
     KeyDown="Window_KeyDown"
     ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
     <Grid Style="{DynamicResource GridStyle1}">

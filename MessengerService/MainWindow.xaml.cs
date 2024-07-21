@@ -22,8 +22,8 @@ namespace MessengerService
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly string sAlertMessage = "";
-        private readonly string sNoLoginStartMessage = "";
+        private readonly string sAlertMessage = "Please write your login information";
+        private readonly string sNoLoginStartMessage = "You are now using the program without an account";
 
         private string sName;
         private string sPassword;
@@ -50,20 +50,16 @@ namespace MessengerService
         {
             if (TextBoxName.Text == String.Empty && TextBoxPassword.Password == String.Empty)
             {
-                alertBox = new AlertBox(sAlertMessage);
+                alertBox = new AlertBox(sAlertMessage, true, true, true);
                 alertBox.Show();
+                alertBox.Focus();
                 return false;
             
             }
 
             if (TextBoxName.Text != String.Empty && TextBoxPassword.Password == String.Empty) 
             {
-                alertBox = new AlertBox(sAlertMessage);
-                alertBox.Show();
-                while ()
-                {
-                    this.
-                }
+                alertBox = new AlertBox(sNoLoginStartMessage, true, false, false);
                 fullLogin = false;
                 return true;
             }
@@ -104,6 +100,10 @@ namespace MessengerService
             {
                 newForm = new Viewer.MainWindow(sName, fullLogin);
                 newForm.Show();
+
+                alertBox.Show();
+                alertBox.Focus();
+
                 this.Close();
             }
         }
