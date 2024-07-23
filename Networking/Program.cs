@@ -9,40 +9,17 @@ using System.Windows;
 
 namespace networking
 {
-    public class networking : IDisposable
+    public class Networking
     {
-        private static ClientHandler m_client = new ClientHandler();
-        private static ServerHandler m_server = new ServerHandler();
+        private static ClientHandler m_client = new();
+        private static ServerHandler m_server = new();
 
         private static bool bConnectionEstablished;
-        private bool _disposedValue;
 
         public static void Main()
         {
             testConnection();
         }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!_disposed) 
-            {
-            
-            }
-
-            if (disposing)
-            {
-
-            
-            }
-            
-        }
-        
 
         private static bool testConnection()
         {

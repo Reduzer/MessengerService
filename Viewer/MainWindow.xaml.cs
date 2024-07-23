@@ -68,13 +68,11 @@ namespace Viewer
         {
             liveChat = new LiveChat();
             lockedPage1 = new LockedPage();
-            lockedPage2 = new LockedPage();
-            lockedPage3 = new LockedPage();
 
             MainPage.Content = liveChat;
-            ProfilePage.Content = lockedPage;
-            ChatListPage.Content = lockedPage;
-            ChatHeaderPage.Content = lockedPage;
+            ProfilePage.Content = null;
+            ChatListPage.Content = null;
+            ChatHeaderPage.Content = lockedPage1;
         }
 
         private void Page_KeyDown(object sender, KeyEventArgs e)

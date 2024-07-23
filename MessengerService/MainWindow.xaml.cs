@@ -22,19 +22,23 @@ namespace MessengerService
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly string sAlertMessage = "Please write your login information";
-        private readonly string sNoLoginStartMessage = "You are now using the program without an account";
+        private readonly string? _sAlertMessage = Properties.Settings.Default.AlertBoxText;
+        private readonly string? _sNoLoginStartMessage = Properties.Settings.Default.InfoBoxText;
 
-        private string sName;
-        private string sPassword;
+        private string? _sName;
+        private string? _sPassword;
 
-        private bool fullLogin;
+        private bool _fullLogin;
 
-        Viewer.MainWindow newForm;
-        AlertBox alertBox;
+        private Viewer.MainWindow? _newForm;
+        private AlertBox? _alertBox;
+        private InfoBox? _infoBox;
 
         private Login.Login login;
 
+        /// <summary>
+        /// Default constructor for the start of the program
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -43,31 +47,31 @@ namespace MessengerService
 
 
         /// <summary>
-        /// Hier werden die verschiedenen Login möglichkeiten einmal überprüft
+        /// Checks for the way of logging into the program
         /// </summary>
         /// <returns>Bool</returns>
         private bool logIn()
         {
             if (TextBoxName.Text == String.Empty && TextBoxPassword.Password == String.Empty)
             {
-                alertBox = new AlertBox(sAlertMessage, true, true, true);
-                alertBox.Show();
-                alertBox.Focus();
+                _alertBox = new AlertBox(_sAlertMessage, true, true, true);
+                _alertBox.Show();
+                _alertBox.Focus();
                 return false;
             
             }
 
-            if (TextBoxName.Text != String.Empty && TextBoxPassword.Password == String.Empty) 
+            if (TextBoxName.Text != String.Empty && TextBoxPassword.Password == String.Empty)
             {
-                alertBox = new AlertBox(sNoLoginStartMessage, true, false, false);
-                fullLogin = false;
+                _infoBox = new InfoBox(_sNoLoginStartMessage);
+                _fullLogin = false;
                 return true;
             }
 
-            if(login.LogInClient(sName, sPassword))
+            if(login.LogInClient(_sName, _sPassword))
             {
-                Debug.WriteLine("Name: " + sName + " Password: " + sPassword);
-                fullLogin = true;
+                Debug.WriteLine("Name: " + _sName + " Password: " + _sPassword);
+                _fullLogin = true;
                 return true;
             }
             return false;
@@ -75,15 +79,15 @@ namespace MessengerService
 
 
         /// <summary>
-        /// Holt sich die Eingaben des Nutzers
+        /// Gets the input from the user
         /// </summary>
         private void getInput()
         {
             string name = TextBoxName.Text;
             string password = TextBoxPassword.Password;
 
-            sName = name;
-            sPassword = password;
+            _sName = name;
+            _sPassword = password;
         }
 
 
@@ -98,21 +102,34 @@ namespace MessengerService
 
             if (logIn())
             {
-                newForm = new Viewer.MainWindow(sName, fullLogin);
-                newForm.Show();
+                _infoBox.Show();
 
-                alertBox.Show();
-                alertBox.Focus();
+                _newForm = new Viewer.MainWindow(_sName, _fullLogin);
+                _newForm.Show();
+
+                _infoBox.Focus();
+
+                DisposeObjects();
 
                 this.Close();
             }
         }
 
+        /// <summary>
+        /// Method for calling the Window for handling the forgot password feature
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ForgotPasswordButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Work in Progress");
         }
 
+        /// <summary>
+        /// Method for catching the user pressing a button while focusing the login window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -121,24 +138,43 @@ namespace MessengerService
             }
         }
 
+        /// <summary>
+        /// Method for moving the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
 
-        private void Closebtn_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Method for closing the program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Minimizebtn_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Method for minimizing the program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
 
-        public void AlertBoxClosed(object sender, EventArgs e)
+        private void DisposeObjects()
         {
+            _alertBox = null;
+            _infoBox = null;
+            login = null;
 
+            return;
         }
     }
 }

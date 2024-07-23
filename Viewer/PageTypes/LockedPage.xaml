@@ -13,8 +13,7 @@
 
     <Grid>
         <StackPanel>
-            <Label Content="Locked" />
-            <Label Content="please sign in to use" />
+            <Label Content="Locked, please sign in to use" />
         </StackPanel>
     </Grid>
 </Page>

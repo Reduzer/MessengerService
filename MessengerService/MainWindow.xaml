@@ -40,14 +40,14 @@
                 <Button
                     x:Name="Minimizebtn"
                     Width="30"
-                    Click="Minimizebtn_Click"
+                    Click="MinimizeBtn_Click"
                     Content="_"
                     Style="{DynamicResource TitleButton}" />
 
                 <Button
                     x:Name="Closebtn"
                     Width="30"
-                    Click="Closebtn_Click"
+                    Click="CloseBtn_Click"
                     Content="X" />
 
             </StackPanel>

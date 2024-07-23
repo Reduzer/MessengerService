@@ -12,7 +12,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
-        <ResourceDictionary Source="/Windows/Components/MergedDictionary.xaml" />
+        <ResourceDictionary Source="/Windows/Components/AlertBox/MergedDictionary.xaml" />
     </Window.Resources>
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>

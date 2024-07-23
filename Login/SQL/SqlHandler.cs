@@ -36,7 +36,7 @@ namespace Login.SQL
 
             if (check())
             {
-                networking.networking.sendMessageToServer(getSQLStatement(userType), loginType);
+                networking.Networking.sendMessageToServer(getSQLStatement(userType), loginType);
                 return true;
             }
             else

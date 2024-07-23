@@ -11,8 +11,11 @@
     <Setting Name="Highlighting" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Test" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="InfoBoxText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">You are now using the program without an account</Value>
+    </Setting>
+    <Setting Name="AlertBoxText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Please write your login information</Value>
     </Setting>
   </Settings>
 </SettingsFile>
