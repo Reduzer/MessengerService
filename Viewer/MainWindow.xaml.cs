@@ -32,6 +32,8 @@ namespace Viewer
         LockedPage lockedPage2;
         LockedPage lockedPage3;
 
+        
+
         public MainWindow(string name, bool fullLogin)
         {
             sName = name;
@@ -53,6 +55,12 @@ namespace Viewer
 
         private void onFirstLoad()
         {
+            if ()
+            {
+
+            }
+
+
             liveChat = new LiveChat();
             profilePage = new ProfilePage();
             chatListPage = new ChatListPage();

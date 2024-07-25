@@ -30,10 +30,9 @@ namespace MessengerService
 
         private bool _fullLogin;
 
+        //Needed Objects for the Login proccess
         private Viewer.MainWindow? _newForm;
         private AlertBox? _alertBox;
-        private InfoBox? _infoBox;
-
         private Login.Login login;
 
         /// <summary>
@@ -54,7 +53,7 @@ namespace MessengerService
         {
             if (TextBoxName.Text == String.Empty && TextBoxPassword.Password == String.Empty)
             {
-                _alertBox = new AlertBox(_sAlertMessage, true, true, true);
+                _alertBox = new AlertBox(_sAlertMessage);
                 _alertBox.Show();
                 _alertBox.Focus();
                 return false;
@@ -63,7 +62,6 @@ namespace MessengerService
 
             if (TextBoxName.Text != String.Empty && TextBoxPassword.Password == String.Empty)
             {
-                _infoBox = new InfoBox(_sNoLoginStartMessage);
                 _fullLogin = false;
                 return true;
             }
@@ -102,14 +100,10 @@ namespace MessengerService
 
             if (logIn())
             {
-                _infoBox.Show();
+                DisposeObjects();
 
                 _newForm = new Viewer.MainWindow(_sName, _fullLogin);
                 _newForm.Show();
-
-                _infoBox.Focus();
-
-                DisposeObjects();
 
                 this.Close();
             }
@@ -171,7 +165,6 @@ namespace MessengerService
         private void DisposeObjects()
         {
             _alertBox = null;
-            _infoBox = null;
             login = null;
 
             return;

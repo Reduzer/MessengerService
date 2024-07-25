@@ -8,6 +8,8 @@
     Title="Alert!"
     Width="300"
     Height="100"
+    Background="#404040"
+    Foreground="White"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -22,6 +24,7 @@
         <Label
             Name="TextForLabel"
             Grid.Row="0"
+            Foreground="White"
             Style="{DynamicResource LabelAlertStyle}" />
 
         <Button
@@ -30,25 +33,7 @@
             Margin="100,5,100,5"
             Padding="0"
             Click="BtnYes_Click"
-            Content="Yes"
-            Style="{DynamicResource ButtonAlertStyle}" />
-
-        <Button
-            Name="BtnNo"
-            Grid.Row="1"
-            Margin="5,5,220,5"
-            Padding="0"
-            Click="BtnNo_Click"
-            Content="No"
-            Style="{DynamicResource ButtonAlertStyle}" />
-
-        <Button
-            Name="BtnCancel"
-            Grid.Row="1"
-            Margin="220,5,5,5"
-            Padding="0"
-            Click="BtnCancel_Click"
-            Content="Cancel"
+            Content="Ok"
             Style="{DynamicResource ButtonAlertStyle}" />
     </Grid>
 </Window>

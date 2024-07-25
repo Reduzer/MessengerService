@@ -12,27 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MessengerService.Windows
+namespace Viewer.Windows
 {
     /// <summary>
-    /// Interaction logic for AlertBox.xaml
+    /// Interaction logic for InfoBox.xaml
     /// </summary>
-    public partial class AlertBox : Window
+    public partial class InfoBox : Window
     {
-        private string message;
-        public AlertBox(string message)
+        public InfoBox()
         {
             InitializeComponent();
-
-            this.message = message;
-
-            this.TextForLabel.Content = this.message;
         }
 
-        private void BtnYes_Click(object sender, RoutedEventArgs e)
+        private void BTN_OK_Click(object sender, RoutedEventArgs e)
         {
-            //MainWindow.
-            this.Close();
+
         }
     }
 }

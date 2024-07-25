@@ -9,6 +9,7 @@
     Width="300"
     Height="100"
     Background="#404040"
+    Foreground="White"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -29,6 +30,7 @@
             Name="TextForLabel"
             Grid.Row="0"
             Grid.ColumnSpan="2"
+            Foreground="White"
             Style="{DynamicResource LabelStyle2}" />
 
         <Button
@@ -39,6 +41,7 @@
             Padding="0"
             Click="BtnOk_OnClick"
             Content="Ok"
-            Style="{DynamicResource ButtonStyle2}" />
+            Style="{DynamicResource ButtonStyle2}"
+            Visibility="Visible" />
     </Grid>
 </Window>
