@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using System.Security.Cryptography;
 
-namespace Login.Security.Util
+namespace Login.Security.Hashing
 {
     internal class generateSalt
     {

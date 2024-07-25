@@ -24,6 +24,9 @@ namespace Viewer
 
         private bool bFullLogin = false;
 
+        /// <summary>
+        /// Objects for PageTypes
+        /// </summary>
         LiveChat liveChat;
         ProfilePage profilePage;
         ChatListPage chatListPage;
@@ -32,15 +35,12 @@ namespace Viewer
         LockedPage lockedPage2;
         LockedPage lockedPage3;
 
-        
-
         public MainWindow(string name, bool fullLogin)
         {
             sName = name;
             bFullLogin = fullLogin;
 
             InitializeComponent();
-
 
             if(bFullLogin)
             {
@@ -55,12 +55,6 @@ namespace Viewer
 
         private void onFirstLoad()
         {
-            if ()
-            {
-
-            }
-
-
             liveChat = new LiveChat();
             profilePage = new ProfilePage();
             chatListPage = new ChatListPage();

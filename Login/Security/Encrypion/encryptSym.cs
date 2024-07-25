@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Security.Cryptography;
-using Login.Security.Util;
+using Login.Security.Hashing;
 
 namespace Login.Security.Encrypion
 {

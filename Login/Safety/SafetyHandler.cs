@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login.src
+namespace Login.Safety
 {
-    internal class getKeysFromContainer
+    internal class SafetyHandler
     {
+        public SafetyHandler() { }
+
+
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using System.Security.Cryptography;
 
-namespace Login.Security
+namespace Login.Security.Hashing
 {
     internal class hashing
     {
@@ -22,7 +22,7 @@ namespace Login.Security
         public byte[] hash(string sStringToHash)
         {
             this.sStringToHash = sStringToHash;
-            
+
             byte[] returnVal = hashString();
 
             return returnVal;

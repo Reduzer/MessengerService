@@ -23,8 +23,4 @@
     <ProjectReference Include="..\Networking\Networking.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Security\Hashing\" />
-  </ItemGroup>
-
 </Project>

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Security.Cryptography;
-
-namespace Login.Security
+namespace Login.Security.Util
 {
-    internal class generateSymKey
+    internal class getKeysFromContainer
     {
     }
 }

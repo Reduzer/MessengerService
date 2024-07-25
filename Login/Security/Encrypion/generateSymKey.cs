@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login.Security
+using System.Security.Cryptography;
+
+namespace Login.Security.Encrypion
 {
-    internal class generateAsymKey
+    internal class generateSymKey
     {
     }
 }
