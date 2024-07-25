@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 using System.Security.Cryptography;
 
-namespace Login.Security
+namespace Login.Security.Encrypion
 {
     internal class encryptAsym
     {
@@ -18,13 +18,13 @@ namespace Login.Security
 
         public encryptAsym()
         {
-            
+
         }
 
         public void encryptData(string message, string key)
         {
-            this.sMessage = message;
-            this.skey = key;
+            sMessage = message;
+            skey = key;
         }
     }
 }

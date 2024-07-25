@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Security;
 
 
-namespace Login.Security
+namespace Login.Security.Util
 {
     internal class createKeyContainer
     {

@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Security.Cryptography;
+using Login.Security.Util;
 
-using Login.Security;
-
-namespace Login.Security
+namespace Login.Security.Encrypion
 {
     internal class encryptSym
     {
@@ -30,10 +29,10 @@ namespace Login.Security
         }
 
 
-        
+
         private string encryptSyme(string sInput)
         {
-            string sReturnString = String.Empty;
+            string sReturnString = string.Empty;
 
             string salt = Convert.ToBase64String(GetSalt.getSalt());
 
@@ -43,10 +42,10 @@ namespace Login.Security
 
 
             }
-            
+
             return sReturnString;
         }
-        
+
 
     }
 }
