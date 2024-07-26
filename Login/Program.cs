@@ -6,21 +6,22 @@ using Login.SQL;
 using Login.TrustedDevice;
 using Login.Safety;
 
-
-
 namespace Login
 {
     public class Login
     {
+        //Bool for checking if the test login has succeded
         private static bool bTestSucceded = false;
 
         //Strings provided by the user
         private string? sName;
         private string? sPassword;
 
+        //Encrypted user info that has been encrypted with sym
         private string? sNameSecure;
         private string? sPasswordSecure;
 
+        //String of the symKey that has been encrypted with asym
         private string? sSecuredKey;
 
         //All the needed handlers for a login process
@@ -35,6 +36,11 @@ namespace Login
             m_SecurityHandler = new securityHandler();
             m_TrustedHandler = new TrustedHandler();
             m_SafetyHandler = new SafetyHandler();
+        }
+
+        public bool LoginClientWithTrusted()
+        {
+            return false;
         }
 
         public bool LoginClient(string sInputName, string sInputPassword)
@@ -61,10 +67,15 @@ namespace Login
                         throw new SafetyNowMatchedExceptions("Exception thrown with the provided information, please check input");
                     }
                 }
-                catch
+                catch (SafetyNowMatchedExceptions e)
                 {
                     return false;
                 }
+                catch (Exception e) 
+                { 
+                    return false;
+                }
+                
             }
             else
             {
