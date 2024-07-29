@@ -8,5 +8,14 @@ namespace Login.JSON
 {
     internal class ReadJSON
     {
+        private string _sReadInfo;
+        private const string _sPathToFile = "";
+
+        public ReadJSON()
+        {
+
+        }
+
+
     }
 }
