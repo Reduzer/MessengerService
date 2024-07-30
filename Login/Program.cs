@@ -47,6 +47,13 @@ namespace Login
             return bReturnBool;
         }
 
+        public bool SetupTrusted(string name, string password, string mac, string uuid)
+        {
+            m_TrustedHandler.firstTimeSetup(name, password, mac, uuid);
+
+            return false;
+        }
+
         public bool LoginClient(string sInputName, string sInputPassword)
         {
             if (bTestSucceded != false)
@@ -86,6 +93,7 @@ namespace Login
             }
             else
             {
+                Console.WriteLine("Could not connect to server!");
                 return false;
             }
         }
