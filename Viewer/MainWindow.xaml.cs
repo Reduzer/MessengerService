@@ -55,12 +55,6 @@ namespace Viewer
 
         private void onFirstLoad()
         {
-            if ()
-            {
-
-            }
-
-
             liveChat = new LiveChat();
             profilePage = new ProfilePage();
             chatListPage = new ChatListPage();
