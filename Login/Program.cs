@@ -5,6 +5,8 @@ using Login.Security;
 using Login.SQL;
 using Login.TrustedDevice;
 using Login.Safety;
+using System.Diagnostics;
+using Login.Enums;
 
 namespace Login
 {
@@ -40,7 +42,9 @@ namespace Login
 
         public bool LoginClientWithTrusted()
         {
-            return false;
+            bool bReturnBool = m_TrustedHandler.CheckForTrusted();
+
+            return bReturnBool;
         }
 
         public bool LoginClient(string sInputName, string sInputPassword)
@@ -52,11 +56,14 @@ namespace Login
 
                 try
                 {
+                    //Check the input of the user here
                     if (true)
                     {
                         sNameSecure = m_SecurityHandler.getSecure(sInputName);
                         sPasswordSecure = m_SecurityHandler.getSecure(sPassword);
                         sSecuredKey = m_SecurityHandler.getKey();
+
+                        sendLogin();
 
                         Dispose();
 
@@ -83,6 +90,21 @@ namespace Login
             }
         }
 
+        private void sendLogin()
+        {
+            try
+            {
+                networking.Networking.sendMessageToServer(sNameSecure, JSONEnums.name.ToString());
+                networking.Networking.sendMessageToServer(sPasswordSecure, JSONEnums.password.ToString());
+                networking.Networking.sendMessageToServer(sSecuredKey, "Key");
+                //networking.Networking.sendMessageToServer();
+            }
+            catch
+            {
+                Debug.WriteLine("Message could not be send, please check");
+            }
+        }
+
         /// <summary>
         /// Method for disposing all Objects and strings before the Login Process closes
         /// </summary>
@@ -106,7 +128,9 @@ namespace Login
 
         private static bool TestProcess()
         {
-            return false;
+            bool bReturnBool = false;
+
+            return bReturnBool;
         }
     }
 }

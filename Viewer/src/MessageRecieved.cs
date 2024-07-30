@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login.JSON
+namespace Viewer.src
 {
-    internal class WriteToJSON
+    public  class MessageRecieved
     {
-
-        public WriteToJSON() { }
-
-        public void writeToJSON(string input, string type)
+        public  void SendMessageToDisplay(string message, string name)
         {
 
         }

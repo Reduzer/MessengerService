@@ -20,9 +20,12 @@ namespace Login.TrustedDevice
             m_WriteJSON = new WriteToJSON();
         }
 
-        public bool SafeInfo(string name, string password)
+        public bool SafeInfo(string name, string password, string mac, string uuid)
         {
-
+            if (m_CreateJSON.createJSON())
+            {
+                //m_WriteJSON.
+            }
 
 
             return false;

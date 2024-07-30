@@ -40,6 +40,7 @@ namespace Viewer.PageTypes
             MessagesSendWrapPannel.Children.Add(messabeLabel);
             RecievedViewer.ScrollToBottom();
         }
+
         public void sendRecievedMessageToDisplay(string msg, string name)
         {
             string finalMessage = name + ": " + msg;

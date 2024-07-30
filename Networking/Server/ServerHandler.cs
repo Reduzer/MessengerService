@@ -17,6 +17,11 @@ public class ServerHandler
         
     }
 
+    public void sendToDisplay()
+    {
+        
+    }
+
     public responseObject getServerResponse()
     {
         return null;

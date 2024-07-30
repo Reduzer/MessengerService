@@ -91,10 +91,5 @@ namespace Viewer
                 }                
             }
         }
-
-        public static void ShowMessageBox(string message)
-        {
-            MessageBox.Show(message);
-        }
     }
 }

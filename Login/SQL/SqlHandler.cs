@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 using Networking;
 
-using Login.Objects;
-
 namespace Login.SQL
 {
     internal class SqlHandler
@@ -15,8 +13,8 @@ namespace Login.SQL
         private createSqlStatement m_sqlStatement;
         private checkIfSafe m_checkIfSafe;
 
-        private unsafe string sUserName;
-        private unsafe string sUserPassword;
+        private string sUserName;
+        private string sUserPassword;
 
         private readonly string userType = "user";
         private readonly string macType = "mac";
@@ -46,7 +44,7 @@ namespace Login.SQL
         }
 
 
-        private unsafe bool check()
+        private bool check()
         {
             if(m_checkIfSafe.isSafe(sUserName, sUserPassword))
             {
@@ -58,36 +56,13 @@ namespace Login.SQL
             }
         }
 
-        private bool macIsKnown()
-        {
-            return false;
-        }
-
-        private macObject getMacObject()
-        {
-            return null;
-        }
-
-
-        public macObject checkMac(string macAdress)
-        {
-            if (macIsKnown())
-            {
-                return getMacObject();
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        private unsafe string getSQLStatement(string requester)
+        public string getSQLStatement(string requester)
         {
             string sReturnString;
 
             if (requester == "username")
             {
-               sReturnString = m_sqlStatement.createStatement("user");
+                sReturnString = m_sqlStatement.createStatement("user");
             }
             else
             {
