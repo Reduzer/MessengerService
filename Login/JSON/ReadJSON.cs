@@ -11,9 +11,6 @@ namespace Login.JSON
     internal class ReadJSON
     {
         private string _sReadInfo;
-        private static string _sPathToDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        private static string _sFileName = "\\UserInfo.json";
-        private static string _sPathToFile = _sPathToDirectory + "\\MessengerName" + _sFileName;
 
         private string _sName;
         private string _sPassword;
@@ -25,32 +22,9 @@ namespace Login.JSON
 
         }
 
-        public string readJSON(string type)
+        public JSONObject readJSON()
         {
-            string sReturnString = String.Empty;
-
-            getInfo();
-
-            switch (type)
-            {
-                case "MacAddress":
-                    sReturnString = _sMacAddress;
-                    break;
-                case "Name":
-                    sReturnString = _sName;
-                    break;
-                case "Password":
-                    sReturnString = _sPassword;
-                    break;
-                case "UUID":
-                    sReturnString = _sUUID;
-                    break;
-                default:
-                    //Exception must be adressed
-                    throw new Exception();
-            }
-
-            return sReturnString;
+            JSONObject readInfo;
         }
 
         private void getInfo()

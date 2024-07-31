@@ -45,7 +45,6 @@ namespace Login.TrustedDevice
 
         private void readInfo()
         {
-            //Remove the Magic string later
             sMacAddress = m_readJSON.readJSON(JSONEnums.mac.ToString());
             sSafedAccountName = m_readJSON.readJSON(JSONEnums.name.ToString());
             sSafedPassword = m_readJSON.readJSON(JSONEnums.password.ToString());
