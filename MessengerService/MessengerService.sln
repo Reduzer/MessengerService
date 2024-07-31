@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts", "..\Contacts\Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Viewer", "..\Viewer\Viewer.csproj", "{837E1F00-A7C9-4B2C-B05D-CD4DBAC10C1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateAccount", "..\CreateAccount\CreateAccount.csproj", "{058DC5C2-F3C7-4716-8D3B-67B2C68CCD08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateAccount", "..\CreateAccount\CreateAccount.csproj", "{058DC5C2-F3C7-4716-8D3B-67B2C68CCD08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

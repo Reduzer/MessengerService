@@ -51,6 +51,19 @@ namespace MessengerService
         /// <returns>Bool</returns>
         private bool logIn()
         {
+            if (login.LoginClient(_sName, _sPassword))
+            {
+                Debug.WriteLine("Name: " + _sName + " Password: " + _sPassword);
+                _fullLogin = true;
+                return true;
+            }
+
+            if (TextBoxName.Text != String.Empty && TextBoxPassword.Password == String.Empty)
+            {
+                _fullLogin = false;
+                return true;
+            }
+
             if (TextBoxName.Text == String.Empty && TextBoxPassword.Password == String.Empty)
             {
                 _alertBox = new AlertBox(_sAlertMessage);
@@ -66,12 +79,6 @@ namespace MessengerService
                 return true;
             }
 
-            if(login.LogInClient(_sName, _sPassword))
-            {
-                Debug.WriteLine("Name: " + _sName + " Password: " + _sPassword);
-                _fullLogin = true;
-                return true;
-            }
             return false;
         }
 

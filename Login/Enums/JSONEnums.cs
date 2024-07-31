@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login.Security
+namespace Login.Enums
 {
-    internal class generateAsymKey
+    public enum JSONEnums
     {
+        name,
+        password,
+        mac,
+        uuid
     }
 }

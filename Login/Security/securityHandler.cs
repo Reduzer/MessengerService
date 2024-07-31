@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Login.Security.Encrypion;
+using Login.Security.Hashing;
 
 namespace Login.Security
 {
@@ -32,6 +34,11 @@ namespace Login.Security
 
 
             return returnString;
+        }
+
+        public string getKey()
+        {
+            return String.Empty;
         }
 
     }

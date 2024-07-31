@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Security;
+using System.Security.Cryptography;
 
-
-namespace Login.Security
+namespace Login.Security.Encrypion
 {
-    internal class createKeyContainer
+    internal class generateSymKey
     {
     }
 }

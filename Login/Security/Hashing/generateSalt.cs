@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using System.Security.Cryptography;
 
-namespace Login.Security
+namespace Login.Security.Hashing
 {
     internal class generateSalt
     {
@@ -15,7 +15,7 @@ namespace Login.Security
         {
             byte[] returnVal;
 
-            using(var generator = RandomNumberGenerator.Create())
+            using (var generator = RandomNumberGenerator.Create())
             {
                 var salt = new byte[128];
                 generator.GetBytes(salt);
