@@ -18,13 +18,11 @@ namespace Login.TrustedDevice
         private string? sSafedPassword;
         private string? sSafedUUID;
 
-        private ReadJSON m_readJSON;
-        private SafeUserInfo m_safeUserInfo;
+        private JSONHandler m_jsonHandler;
 
         public TrustedHandler() 
         {
-            m_readJSON = new ReadJSON();
-            m_safeUserInfo = new SafeUserInfo();
+            m_jsonHandler = new JSONHandler();
         }
 
         public bool CheckForTrusted()
@@ -45,15 +43,14 @@ namespace Login.TrustedDevice
 
         private void readInfo()
         {
-            sMacAddress = m_readJSON.readJSON(JSONEnums.mac.ToString());
-            sSafedAccountName = m_readJSON.readJSON(JSONEnums.name.ToString());
-            sSafedPassword = m_readJSON.readJSON(JSONEnums.password.ToString());
-            sSafedUUID = m_readJSON.readJSON(JSONEnums.uuid.ToString());
+            Dictionary<string, string> safedInfo = m_jsonHandler.readJSON();
+
         }
 
         public void firstTimeSetup(string name, string password, string mac, string uuid)
         {
-            m_safeUserInfo.SafeInfo(name, password, mac, uuid);
+            string[] infos = [name, password, mac, uuid];
+            m_jsonHandler.firstTimeSetup(infos);
 
             hasAlreadyBeenSafed = true;
         }

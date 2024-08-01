@@ -4,7 +4,6 @@ using Login.Exceptions;
 using Login.Security;
 using Login.SQL;
 using Login.TrustedDevice;
-using Login.Safety;
 using System.Diagnostics;
 using Login.Enums;
 
@@ -19,9 +18,9 @@ namespace Login
         private string? sName;
         private string? sPassword;
 
-        //Encrypted user info that has been encrypted with sym
-        private string? sNameSecure;
-        private string? sPasswordSecure;
+        //User info that has been encrypted with sym
+        private Dictionary<string, string> SecuredInfo;
+        private string loginString;
 
         //String of the symKey that has been encrypted with asym
         private string? sSecuredKey;
@@ -30,14 +29,12 @@ namespace Login
         private securityHandler m_SecurityHandler;
         private SqlHandler m_SqlHandler;
         private TrustedHandler m_TrustedHandler;
-        private SafetyHandler m_SafetyHandler;
 
         public Login()
         {
             m_SqlHandler = new SqlHandler();
             m_SecurityHandler = new securityHandler();
             m_TrustedHandler = new TrustedHandler();
-            m_SafetyHandler = new SafetyHandler();
         }
 
         public bool LoginClientWithTrusted()
@@ -63,22 +60,15 @@ namespace Login
 
                 try
                 {
-                    //Check the input of the user here
-                    if (true)
+                    if (m_SqlHandler.checkForSafety(sInputName, sInputPassword))
                     {
-                        sNameSecure = m_SecurityHandler.getSecure(sInputName);
-                        sPasswordSecure = m_SecurityHandler.getSecure(sPassword);
-                        sSecuredKey = m_SecurityHandler.getKey();
-
-                        sendLogin();
-
-                        Dispose();
+                        SecuredInfo = m_SecurityHandler.getSecure(sInputName, sInputPassword);
 
                         return true;
                     }
                     else
                     {
-                        throw new SafetyNowMatchedExceptions("Exception thrown with the provided information, please check input");
+                        throw new SafetyNowMatchedExceptions("The requirements for application safety are not reached");
                     }
                 }
                 catch (SafetyNowMatchedExceptions e)
@@ -102,10 +92,7 @@ namespace Login
         {
             try
             {
-                networking.Networking.sendMessageToServer(sNameSecure, JSONEnums.name.ToString());
-                networking.Networking.sendMessageToServer(sPasswordSecure, JSONEnums.password.ToString());
-                networking.Networking.sendMessageToServer(sSecuredKey, "Key");
-                //networking.Networking.sendMessageToServer();
+                networking.Networking.sendMessageToServer(loginString, "Login");
             }
             catch
             {
@@ -118,7 +105,6 @@ namespace Login
         /// </summary>
         private void Dispose()
         {
-            this.m_SafetyHandler = null;
             this.m_SecurityHandler = null;
             this.m_TrustedHandler = null;
             this.m_SqlHandler = null;

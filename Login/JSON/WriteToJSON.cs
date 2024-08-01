@@ -14,14 +14,13 @@ namespace Login.JSON
         public WriteToJSON(string pathToFile)
         {
             path = pathToFile;
-
         }
 
         public void writeToJSON(JSONObject Info, JsonSerializerOptions options)
         {
+            string info = JsonSerializer.Serialize(Info, options);
 
+            File.WriteAllText(path, info);
         }
-
-
     }
 }

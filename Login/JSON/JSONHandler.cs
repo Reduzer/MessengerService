@@ -14,24 +14,30 @@ namespace Login.JSON
         private WriteToJSON m_WriteToJSON;
         private CreateJSON m_CreateJSON;
 
-        private JsonSerializerOptions options;
+        private JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented = true };
 
-        private static string? _sPathToDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        private static string? _sPathToDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MessengerName";
         private static string? _sFileName = "\\UserInfo.json";
-        private static string? _sPathToFile = _sPathToDirectory + "\\MessengerName" + _sFileName;
+        private static string? _sPathToFile = _sPathToDirectory + _sFileName;
 
 
         public JSONHandler()
         {
-            m_JsonRead = new ReadJSON();
-            m_CreateJSON = new CreateJSON();
-            m_JsonRead = new ReadJSON();
-            options = new JsonSerializerOptions { WriteIndented = true };
+            m_JsonRead = new ReadJSON(_sPathToFile, options);
+            m_CreateJSON = new CreateJSON(_sPathToDirectory);
+            m_WriteToJSON = new WriteToJSON(_sPathToFile);
         }
 
-        public string readJSON()
+        /// <summary>
+        /// WIP needs to add the strings to the Dictonary
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, string> readJSON()
         {
-            return String.Empty;
+            Dictionary<string, string> infos = new Dictionary<string, string>();
+
+
+            return infos;
         }
 
         public void writeJSON(string[] info)
@@ -39,14 +45,17 @@ namespace Login.JSON
             m_WriteToJSON.writeToJSON(StringToJSON(info), options);
         }
 
-        public void firstTimeSetup()
+        public void firstTimeSetup(string[] info)
         {
-
+            m_CreateJSON.CreateDir();
+            m_WriteToJSON.writeToJSON(StringToJSON(info), options);
         }
 
         private JSONObject StringToJSON(string[] info)
         {
-            return null;
+            StringBuilder sb_json = new StringBuilder();
+
+            return null; 
         }
     }
 }

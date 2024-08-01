@@ -24,22 +24,14 @@ namespace Login.Security
             hashing = new hashing();
         }
 
-        public string getSecure(string input)
+        public Dictionary<string, string> getSecure(string name, string password)
         {
-            string returnString;
+            Dictionary<string, string> returnVal = new Dictionary<string, string>();
 
-            returnString = input;
-
-            returnString = hashing.hash(returnString).ToString();
+            
 
 
-            return returnString;
+            return returnVal;
         }
-
-        public string getKey()
-        {
-            return String.Empty;
-        }
-
     }
 }

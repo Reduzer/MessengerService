@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,62 +9,34 @@ namespace Login.JSON
 {
     internal class CreateJSON
     {
-        private static readonly string _sApplicationDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        private static readonly string _sPath = _sApplicationDataDir + "\\MessengerName";
-
-        private const string _sFileName = "\\UserInfo.json";
-
-        private static string _sPathToFile = _sPath + _sFileName;
+        private string sDirPath;
 
         private FileStream fs;
 
-        public CreateJSON() 
+        public CreateJSON(string dirPath) 
         {
-        
+            this.sDirPath = dirPath;
         }
 
-        public bool createJSON()
-        {
-            CreateDir();
-            pCreateJSON();
-
-            return false;
-        }
-
-        private bool CreateDir()
+        public bool CreateDir()
         {
             try
             {
-                if (Directory.Exists(_sPath))
+                if (Directory.Exists(sDirPath))
                 {
                     return true;
                 }
                 else
                 {
-                    Directory.CreateDirectory(_sPath);
+                    Directory.CreateDirectory(sDirPath);
                     return true;
                 }   
             }
             catch (Exception e)
             {
+                Debug.WriteLine(e.Message);
                 return false;
             }
-        }
-
-        private bool pCreateJSON()
-        {
-            if (File.Exists(_sPathToFile))
-            {
-                return true;
-            }
-            else
-            {
-                fs = File.Create(_sPathToFile);
-
-                pCreateJSON();
-            }
-
-            return false;
         }
     }
 }

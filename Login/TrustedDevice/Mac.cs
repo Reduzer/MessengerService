@@ -15,7 +15,6 @@ namespace Login.TrustedDevice
         
         }
 
-
         public string? getCurrentMac()
         {
             var macAddress = 

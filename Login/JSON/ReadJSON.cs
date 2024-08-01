@@ -10,31 +10,33 @@ namespace Login.JSON
 {
     internal class ReadJSON
     {
-        private string _sReadInfo;
+        private JsonSerializerOptions options;
 
-        private string _sName;
-        private string _sPassword;
-        private string _sMacAddress;
-        private string _sUUID;
+        private string fullPath;
+        string info;
 
-        public ReadJSON()
+        public ReadJSON(string fullPath, JsonSerializerOptions options)
         {
-
+            this.fullPath = fullPath;
+            this.options = options;
         }
 
-        public JSONObject readJSON()
+        public JSONObject? readJSON()
         {
-            JSONObject readInfo;
+            JSONObject readInfo = getInfo();
+
+            return readInfo;
         }
 
-        private void getInfo()
+        private JSONObject getInfo()
         {
+            JSONObject json;
 
-        }
+            string info = File.ReadAllText(fullPath);
 
-        private void formatInfo()
-        {
+            json = JsonSerializer.Deserialize<JSONObject>(fullPath, options)!;
 
+            return json;
         }
     }
 }
