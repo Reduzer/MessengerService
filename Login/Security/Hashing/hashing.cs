@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Security.Cryptography;
+using System.Drawing;
 
 namespace Login.Security.Hashing
 {
@@ -12,11 +13,14 @@ namespace Login.Security.Hashing
     {
         private string sStringToHash;
 
-        SHA3_512 sha;
+        private SHA3_512 sha;
+        private generateSalt salt;
+
+        private salt generatetSalt;
 
         public hashing()
         {
-
+            salt = new generateSalt();
         }
 
         public byte[] hash(string sStringToHash)
@@ -33,11 +37,19 @@ namespace Login.Security.Hashing
             byte[] returnVal;
 
             sha = SHA3_512.Create();
-            returnVal = Encoding.UTF8.GetBytes(sStringToHash);
+
+            generatetSalt = salt.getSalt();
+
+            returnVal = Encoding.UTF8.GetBytes(generatetSalt._sDateTime + sStringToHash + generatetSalt._sMouseCoordinates);
 
             sha.ComputeHash(returnVal);
 
             return returnVal;
+        }
+
+        public void setMousePosition(Point MousePosition)
+        {
+            salt.setMousePosition(MousePosition);
         }
     }
 }

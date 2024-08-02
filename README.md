@@ -13,3 +13,8 @@
 | Networking | :x: |
 | Visuals | :x: | 
 | Refactoring | :x: |
+
+## Ideen 
+ - Timestamps bei Keys
+ - Zufällige abfrage von Passwort für erhöhte Sicherheit
+

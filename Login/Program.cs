@@ -6,6 +6,7 @@ using Login.SQL;
 using Login.TrustedDevice;
 using System.Diagnostics;
 using Login.Enums;
+using System.Drawing;
 
 namespace Login
 {
@@ -24,6 +25,8 @@ namespace Login
 
         //String of the symKey that has been encrypted with asym
         private string? sSecuredKey;
+
+        public Point pMousePosition { private get; set; }
 
         //All the needed handlers for a login process
         private securityHandler m_SecurityHandler;
@@ -51,7 +54,7 @@ namespace Login
             return false;
         }
 
-        public bool LoginClient(string sInputName, string sInputPassword)
+        public bool LoginClient(string sInputName, string sInputPassword, Point MousePosition)
         {
             if (bTestSucceded != false)
             {
@@ -62,7 +65,7 @@ namespace Login
                 {
                     if (m_SqlHandler.checkForSafety(sInputName, sInputPassword))
                     {
-                        SecuredInfo = m_SecurityHandler.getSecure(sInputName, sInputPassword);
+                        SecuredInfo = m_SecurityHandler.getSecure(sInputName, sInputPassword, MousePosition);
 
                         return true;
                     }

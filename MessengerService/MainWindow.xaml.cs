@@ -14,6 +14,7 @@ using Viewer;
 using Login;
 using System.Diagnostics;
 using MessengerService.Windows;
+using MessengerService.Util;
 
 namespace MessengerService
 {
@@ -51,7 +52,7 @@ namespace MessengerService
         /// <returns>Bool</returns>
         private bool logIn()
         {
-            if (login.LoginClient(_sName, _sPassword))
+            if (login.LoginClient(_sName, _sPassword, GetMousePosition.getMousePosition()))
             {
                 Debug.WriteLine("Name: " + _sName + " Password: " + _sPassword);
                 _fullLogin = true;

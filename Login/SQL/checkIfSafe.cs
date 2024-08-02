@@ -41,14 +41,18 @@ namespace Login.SQL
             }
             else
             {
-                if (sUserInput.Contains("DROP") || sUserInput.Contains("DELETE") || sUserInput.Contains("INSERT") || sUserInput.Contains("UPDATE") || sUserInput.Contains('"'))
+                if (sUserInput.Contains("") || sUserPassword.Contains(""))
                 {
-                    throw new IllegalSqlCommandException();
+                    if (sUserInput.Contains("DROP") || sUserInput.Contains("DELETE") || sUserInput.Contains("INSERT") || sUserInput.Contains("UPDATE") || sUserInput.Contains('"'))
+                    {
+                        throw new IllegalSqlCommandException();
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
-                else
-                {
-                    return true;
-                }
+                
             }
         }
     }

@@ -4,26 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Security.Cryptography;
+using System.Drawing;
+using System.Windows.Input;
 
 namespace Login.Security.Hashing
 {
     internal class generateSalt
     {
+        private string _sMouseCoordinates;
+        private string _sDateTime;
 
-        public byte[] getSalt()
+        public salt getSalt()
         {
-            byte[] returnVal;
+            salt returnSalt;
 
-            using (var generator = RandomNumberGenerator.Create())
-            {
-                var salt = new byte[128];
-                generator.GetBytes(salt);
-                returnVal = salt;
-            }
+            _sDateTime = System.DateTime.Now.ToString();
 
-            return returnVal;
+            returnSalt = new salt(_sDateTime, _sMouseCoordinates);
+
+            return returnSalt;
         }
 
+        public void setMousePosition(Point position)
+        {
+            string convertString = position.ToString();
+        }
     }
 }

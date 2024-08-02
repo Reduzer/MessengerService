@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,23 +11,26 @@ namespace Login.Security
 {
     internal class securityHandler
     {
-        private encryptAsym encryptAsym;
-        private encryptSym encryptSym;
-        private hashing hashing;
+        private encryptAsym m_encryptAsym;
+        private encryptSym m_encryptSym;
+        private hashing m_hashing;
 
-        private string name;
-        private string password;
+        private string _sName;
+        private string _sPassword;
 
         public securityHandler()
         {
-            encryptAsym = new encryptAsym();
-            encryptSym = new encryptSym();
-            hashing = new hashing();
+            m_encryptAsym = new encryptAsym();
+            m_encryptSym = new encryptSym();
+            m_hashing = new hashing();
         }
 
-        public Dictionary<string, string> getSecure(string name, string password)
+        public Dictionary<string, string> getSecure(string name, string password, Point MousePosition)
         {
             Dictionary<string, string> returnVal = new Dictionary<string, string>();
+            m_hashing.setMousePosition(MousePosition);
+
+
 
             
 
