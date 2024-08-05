@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Security.Cryptography;
 using Login.Security.Hashing;
+using Login.Security.Encrypion.Objects;
 
 namespace Login.Security.Encrypion
 {
@@ -19,9 +20,9 @@ namespace Login.Security.Encrypion
             GetSalt = new generateSalt();
         }
 
-        public string getEncryptetMessage(string sInput)
+        public AESObject getEncryptetMessage(string sInput)
         {
-            string sReturnString = "";
+            AESObject sReturnString = null;
 
             sReturnString = encryptSyme(sInput);
 
@@ -30,20 +31,21 @@ namespace Login.Security.Encrypion
 
 
 
-        private string encryptSyme(string sInput)
+        private AESObject encryptSyme(string sInput)
         {
-            string sReturnString = string.Empty;
+            AESObject sReturnObject;
 
-            string salt = Convert.ToBase64String(GetSalt.getSalt());
+            byte[] encryptedData;
 
             using (Aes myAes = Aes.Create())
             {
-                sReturnString = sInput;
 
 
+
+                sReturnObject = new AESObject();
             }
 
-            return sReturnString;
+            return sReturnObject;
         }
 
 
