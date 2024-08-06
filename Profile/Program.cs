@@ -1,0 +1,41 @@
+﻿using Profile.Objects;
+using System;
+
+namespace Profile
+{
+    internal class Profile
+    {
+        private string sName;
+        private string sStatus;
+        private picture m_ProfilePicture;
+        private List<picture> m_ProfilePictureList;
+
+        public Profile() 
+        {
+        
+        }
+
+        public static void Main()
+        {
+
+        }
+
+
+        public void profileLoader()
+        {
+
+        }
+
+
+
+        public object getInfo()
+        {
+
+
+            return null;
+        }
+
+
+
+    }
+}
