@@ -35,8 +35,11 @@ namespace Login.Security.Encrypion
         {
             AESObject sReturnObject;
 
+<<<<<<< Updated upstream
             byte[] encryptedData;
 
+=======
+>>>>>>> Stashed changes
             using (Aes myAes = Aes.Create())
             {
 
