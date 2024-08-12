@@ -35,17 +35,25 @@ namespace Login.Security.Encrypion
         {
             AESObject sReturnObject;
 
-<<<<<<< Updated upstream
             byte[] encryptedData;
 
-=======
->>>>>>> Stashed changes
             using (Aes myAes = Aes.Create())
             {
+                ICryptoTransform encryptor = myAes.CreateEncryptor(myAes.Key, myAes.IV);
 
+                using(MemoryStream memStream = new MemoryStream())
+                {
+                    using (CryptoStream cryptoStream = new CryptoStream(memStream, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter streamWriter = new StreamWriter(cryptoStream))
+                        {
+                            streamWriter.Write(sInput);
+                        }
+                        encryptedData = memStream.ToArray();
+                    }
+                }
 
-
-                sReturnObject = new AESObject();
+                sReturnObject = new AESObject(encryptedData, myAes.Key, myAes.IV);
             }
 
             return sReturnObject;
